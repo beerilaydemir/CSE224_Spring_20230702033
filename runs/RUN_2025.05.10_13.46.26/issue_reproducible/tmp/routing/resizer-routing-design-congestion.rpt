@@ -1,0 +1,36 @@
+violation type: Vertical congestion
+	srcs: net:_007_ net:_022_ net:_028_ net:_032_ net:_053_ net:_170_ net:_177_ net:_179_ net:_183_ net:_206_ net:_217_ net:net1 net:net2 net:net30 
+	congestion information: capacity:13 usage:14 overflow:1
+	bbox = ( 13.8, 48.3 ) - ( 20.7, 55.2) on Layer -
+violation type: Vertical congestion
+	srcs: net:_025_ net:_029_ net:_062_ net:_086_ net:_119_ net:_123_ net:_130_ net:_138_ net:_187_ net:_190_ net:_193_ net:_212_ net:_244_ net:net8 net:net19 
+	congestion information: capacity:14 usage:15 overflow:1
+	bbox = ( 20.7, 48.3 ) - ( 27.6, 55.2) on Layer -
+violation type: Vertical congestion
+	srcs: net:_013_ net:_021_ net:_040_ net:_041_ net:_054_ net:_060_ net:_088_ net:_148_ net:_185_ net:_189_ net:_203_ net:_224_ net:_240_ net:net16 net:net39 
+	congestion information: capacity:14 usage:15 overflow:1
+	bbox = ( 27.6, 48.3 ) - ( 34.5, 55.2) on Layer -
+violation type: Vertical congestion
+	srcs: net:_021_ net:_038_ net:_080_ net:_089_ net:_107_ net:_109_ net:_112_ net:_113_ net:_194_ net:net13 net:net15 net:net37 
+	congestion information: capacity:11 usage:12 overflow:1
+	bbox = ( 34.5, 41.4 ) - ( 41.4, 48.3) on Layer -
+violation type: Vertical congestion
+	srcs: net:_038_ net:_058_ net:_080_ net:_089_ net:_109_ net:_112_ net:_113_ net:_152_ net:_186_ net:_245_ net:net15 net:net37 
+	congestion information: capacity:11 usage:12 overflow:1
+	bbox = ( 34.5, 48.3 ) - ( 41.4, 55.2) on Layer -
+violation type: Vertical congestion
+	srcs: net:_056_ net:_076_ net:_114_ net:_119_ net:_123_ net:_143_ net:_162_ net:_182_ net:_198_ net:_203_ net:_229_ net:net7 net:net12 net:net43 
+	congestion information: capacity:12 usage:14 overflow:2
+	bbox = ( 55.2, 41.4 ) - ( 62.1, 48.3) on Layer -
+violation type: Vertical congestion
+	srcs: net:_004_ net:_052_ net:_084_ net:_144_ net:_154_ net:_167_ net:_176_ net:_195_ net:_216_ net:_219_ net:_233_ net:net11 net:net25 
+	congestion information: capacity:12 usage:13 overflow:1
+	bbox = ( 62.1, 41.4 ) - ( 69, 48.3) on Layer -
+violation type: Vertical congestion
+	srcs: net:_023_ net:_027_ net:_066_ net:_067_ net:_084_ net:_085_ net:_101_ net:_142_ net:_147_ net:_159_ net:_161_ net:_191_ net:_205_ net:_215_ net:net7 
+	congestion information: capacity:14 usage:15 overflow:1
+	bbox = ( 75.9, 48.3 ) - ( 82.8, 55.2) on Layer -
+violation type: Vertical congestion
+	srcs: net:_006_ net:_107_ net:_108_ net:_120_ net:_121_ net:_132_ net:_135_ net:_145_ net:_168_ net:_188_ net:_220_ net:_241_ 
+	congestion information: capacity:11 usage:12 overflow:1
+	bbox = ( 82.8, 48.3 ) - ( 89.7, 55.2) on Layer -

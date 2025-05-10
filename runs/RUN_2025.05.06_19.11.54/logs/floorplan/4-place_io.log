@@ -1,0 +1,5 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Valid directives are #N, #E, #S, or #W. Append R for reversing the default order. Use #BUS_SORT to group 'bus bits' by index. Please make sure you have set a valid side first before listing pins

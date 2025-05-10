@@ -1,0 +1,6 @@
+[WARNING STA-0366] port '__VIRTUAL_CLK__' not found.
+[WARNING STA-0419] transition time can not be specified for virtual clocks.
+[WARNING GRT-0230] Congestion iterations cannot increase overflow, reached the maximum number of times the total overflow can be increased.
+[WARNING GRT-0115] Global routing finished with overflow.
+[WARNING GRT-0230] Congestion iterations cannot increase overflow, reached the maximum number of times the total overflow can be increased.
+[WARNING GRT-0115] Global routing finished with overflow.

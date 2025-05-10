@@ -1,0 +1,56 @@
+[WARNING STA-0366] port '__VIRTUAL_CLK__' not found.
+[WARNING STA-0419] transition time can not be specified for virtual clocks.
+[WARNING STA-0450] virtual clock __VIRTUAL_CLK__ can not be propagated.
+[WARNING GRT-0026] Missing route to pin rebuffer21/A.
+[WARNING GRT-0026] Missing route to pin _344_/X.
+[WARNING GRT-0026] Missing route to pin _352_/B.
+[WARNING GRT-0026] Missing route to pin _352_/A.
+[WARNING GRT-0026] Missing route to pin _352_/C.
+[WARNING GRT-0026] Missing route to pin _375_/A1.
+[WARNING GRT-0026] Missing route to pin _375_/A2.
+[WARNING GRT-0026] Missing route to pin _375_/X.
+[WARNING GRT-0026] Missing route to pin _380_/A.
+[WARNING GRT-0026] Missing route to pin _380_/B.
+[WARNING GRT-0026] Missing route to pin _380_/Y.
+[WARNING GRT-0026] Missing route to pin _421_/A2.
+[WARNING GRT-0026] Missing route to pin _421_/A1.
+[WARNING GRT-0026] Missing route to pin _394_/Y.
+[WARNING GRT-0026] Missing route to pin _436_/A2.
+[WARNING GRT-0026] Missing route to pin _415_/A.
+[WARNING GRT-0026] Missing route to pin _415_/B.
+[WARNING GRT-0026] Missing route to pin _419_/A2.
+[WARNING GRT-0026] Missing route to pin _419_/B1.
+[WARNING GRT-0026] Missing route to pin _419_/X.
+[WARNING GRT-0026] Missing route to pin _423_/A2.
+[WARNING GRT-0026] Missing route to pin _423_/B1.
+[WARNING GRT-0026] Missing route to pin _421_/X.
+[WARNING GRT-0026] Missing route to pin _430_/A.
+[WARNING GRT-0026] Missing route to pin _435_/A1.
+[WARNING GRT-0026] Missing route to pin _438_/C1.
+[WARNING GRT-0026] Missing route to pin _438_/D1.
+[WARNING GRT-0026] Missing route to pin _463_/A1.
+[WARNING GRT-0026] Missing route to pin _463_/A2.
+[WARNING GRT-0026] Missing route to pin _451_/C1.
+[WARNING GRT-0026] Missing route to pin _451_/X.
+[WARNING GRT-0026] Missing route to pin _324_/B1.
+[WARNING GRT-0026] Missing route to pin _279_/A.
+[WARNING GRT-0026] Missing route to pin _451_/B1.
+[WARNING GRT-0026] Missing route to pin _298_/A2.
+[WARNING GRT-0026] Missing route to pin _279_/B.
+[WARNING GRT-0026] Missing route to pin _279_/C.
+[WARNING GRT-0026] Missing route to pin _475_/A.
+[WARNING GRT-0026] Missing route to pin _333_/B.
+[WARNING GRT-0026] Missing route to pin _298_/X.
+[WARNING GRT-0026] Missing route to pin _324_/B2.
+[WARNING GRT-0026] Missing route to pin output25/X.
+[WARNING GRT-0026] Missing route to pin _344_/A.
+[WARNING GRT-0026] Missing route to pin _344_/B.
+[WARNING GRT-0026] Missing route to pin _322_/A.
+[WARNING GRT-0026] Missing route to pin _344_/C.
+[WARNING GRT-0026] Missing route to pin _344_/D.
+[WARNING GRT-0026] Missing route to pin _475_/B.
+[WARNING GRT-0026] Missing route to pin output25/A.
+[WARNING GRT-0026] Missing route to pin _436_/A1.
+[WARNING GRT-0026] Missing route to pin _402_/B.
+[WARNING GRT-0026] Missing route to pin _298_/B1.
+[WARNING] Did not save OpenROAD database!
