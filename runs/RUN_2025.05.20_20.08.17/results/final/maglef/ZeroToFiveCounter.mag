@@ -1,0 +1,137 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1747771754
+<< nwell >>
+rect 1066 2159 13746 14726
+<< obsli1 >>
+rect 1104 2159 13708 14705
+<< obsm1 >>
+rect 842 2128 13708 14736
+<< metal2 >>
+rect 7102 0 7158 800
+rect 9034 0 9090 800
+rect 9678 0 9734 800
+rect 10322 0 10378 800
+<< obsm2 >>
+rect 846 856 13414 14725
+rect 846 800 7046 856
+rect 7214 800 8978 856
+rect 9146 800 9622 856
+rect 9790 800 10266 856
+rect 10434 800 13414 856
+<< metal3 >>
+rect 0 13608 800 13728
+rect 14087 13608 14887 13728
+rect 0 12928 800 13048
+rect 14087 12928 14887 13048
+rect 0 12248 800 12368
+rect 14087 4088 14887 4208
+rect 0 3408 800 3528
+rect 14087 3408 14887 3528
+rect 0 2728 800 2848
+rect 14087 2728 14887 2848
+<< obsm3 >>
+rect 798 13808 14087 14721
+rect 880 13528 14007 13808
+rect 798 13128 14087 13528
+rect 880 12848 14007 13128
+rect 798 12448 14087 12848
+rect 880 12168 14087 12448
+rect 798 4288 14087 12168
+rect 798 4008 14007 4288
+rect 798 3608 14087 4008
+rect 880 3328 14007 3608
+rect 798 2928 14087 3328
+rect 880 2648 14007 2928
+rect 798 2143 14087 2648
+<< metal4 >>
+rect 2519 2128 2839 14736
+rect 3179 2128 3499 14736
+rect 5670 2128 5990 14736
+rect 6330 2128 6650 14736
+rect 8821 2128 9141 14736
+rect 9481 2128 9801 14736
+rect 11972 2128 12292 14736
+rect 12632 2128 12952 14736
+<< obsm4 >>
+rect 6131 9555 6197 12341
+<< metal5 >>
+rect 1056 13620 13756 13940
+rect 1056 12960 13756 13280
+rect 1056 10493 13756 10813
+rect 1056 9833 13756 10153
+rect 1056 7366 13756 7686
+rect 1056 6706 13756 7026
+rect 1056 4239 13756 4559
+rect 1056 3579 13756 3899
+<< labels >>
+rlabel metal3 s 0 2728 800 2848 6 AN[0]
+port 1 nsew signal output
+rlabel metal3 s 0 12928 800 13048 6 AN[1]
+port 2 nsew signal output
+rlabel metal3 s 14087 12928 14887 13048 6 AN[2]
+port 3 nsew signal output
+rlabel metal3 s 14087 3408 14887 3528 6 AN[3]
+port 4 nsew signal output
+rlabel metal3 s 0 13608 800 13728 6 AN[4]
+port 5 nsew signal output
+rlabel metal3 s 0 3408 800 3528 6 AN[5]
+port 6 nsew signal output
+rlabel metal3 s 14087 13608 14887 13728 6 AN[6]
+port 7 nsew signal output
+rlabel metal3 s 14087 2728 14887 2848 6 AN[7]
+port 8 nsew signal output
+rlabel metal4 s 3179 2128 3499 14736 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal4 s 6330 2128 6650 14736 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal4 s 9481 2128 9801 14736 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal4 s 12632 2128 12952 14736 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal5 s 1056 4239 13756 4559 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal5 s 1056 7366 13756 7686 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal5 s 1056 10493 13756 10813 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal5 s 1056 13620 13756 13940 6 VGND
+port 9 nsew ground bidirectional
+rlabel metal4 s 2519 2128 2839 14736 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal4 s 5670 2128 5990 14736 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal4 s 8821 2128 9141 14736 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal4 s 11972 2128 12292 14736 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal5 s 1056 3579 13756 3899 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal5 s 1056 6706 13756 7026 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal5 s 1056 9833 13756 10153 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal5 s 1056 12960 13756 13280 6 VPWR
+port 10 nsew power bidirectional
+rlabel metal3 s 0 12248 800 12368 6 clk
+port 11 nsew signal input
+rlabel metal2 s 9034 0 9090 800 6 count[0]
+port 12 nsew signal output
+rlabel metal2 s 9678 0 9734 800 6 count[1]
+port 13 nsew signal output
+rlabel metal2 s 10322 0 10378 800 6 count[2]
+port 14 nsew signal output
+rlabel metal3 s 14087 4088 14887 4208 6 count[3]
+port 15 nsew signal output
+rlabel metal2 s 7102 0 7158 800 6 rst
+port 16 nsew signal input
+<< properties >>
+string FIXED_BBOX 0 0 14887 17031
+string LEFclass BLOCK
+string LEFview TRUE
+string GDS_END 819644
+string GDS_FILE /openlane/designs/project3/runs/RUN_2025.05.20_20.08.17/results/signoff/ZeroToFiveCounter.magic.gds
+string GDS_START 267338
+<< end >>
+

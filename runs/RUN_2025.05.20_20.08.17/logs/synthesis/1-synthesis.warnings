@@ -1,0 +1,4 @@
+Warning: reg '\AN' is assigned in a continuous assignment at /openlane/designs/project3/src/ZeroToFiveCounter.v:61.9-61.22.
+/openlane/designs/project3/src/ZeroToFiveCounter.v:50: Warning: Identifier `\one_second_enable' is implicitly declared.
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warnings: 2 unique messages, 2 total

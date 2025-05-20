@@ -1,0 +1,11 @@
+/openlane/designs/project3/src/ZeroToFiveCounter.v:50: Warning: Identifier `\one_second_enable' is implicitly declared.
+Warning: Wire ZeroToFiveCounter.\AN [7] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [6] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [5] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [4] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [3] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [2] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [1] is used but has no driver.
+Warning: Wire ZeroToFiveCounter.\AN [0] is used but has no driver.
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warnings: 9 unique messages, 9 total
