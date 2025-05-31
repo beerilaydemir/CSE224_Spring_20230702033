@@ -1,0 +1,47 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Top-level design name: TopModule
+Block boundaries: 0 0 26540 37260
+Horizontal Tracks Origin: 340, Count: 55, Step: 680
+Vertical Tracks Origin: 230, Count: 58, Step: 460
+Placement details for the #N side
+Virtual pin count:  0
+Actual pin count:  14
+Total pin count:  14
+Tracks count:  58
+Tracks per pin:  4
+Used tracks count:  53
+Unused track count:  5
+Starting track index:  2
+Placement Map:
+[230, 690, [91m1150[0m, 1610, 2070, 2530, [91m2990[0m, 3450, 3910, 4370, [91m4830[0m, 5290, 5750, 6210, [91m6670[0m, 7130, 7590, 8050, [91m8510[0m, 8970, 9430, 9890, [91m10350[0m, 10810, 11270, 11730, [91m12190[0m, 12650, 13110, 13570, [91m14030[0m, 14490, 14950, 15410, [91m15870[0m, 16330, 16790, 17250, [91m17710[0m, 18170, 18630, 19090, [91m19550[0m, 20010, 20470, 20930, [91m21390[0m, 21850, 22310, 22770, [91m23230[0m, 23690, 24150, 24610, [91m25070[0m, 25530, 25990, 26450, ]
+Indices of used tracks: [2, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54]
+---
+Placement details for the #E side
+Virtual pin count:  0
+Actual pin count:  18
+Total pin count:  18
+Tracks count:  28
+Tracks per pin:  1
+Used tracks count:  18
+Unused track count:  10
+Starting track index:  5
+Placement Map:
+[340, 1700, 3060, 4420, 5780, [91m7140[0m, [91m8500[0m, [91m9860[0m, [91m11220[0m, [91m12580[0m, [91m13940[0m, [91m15300[0m, [91m16660[0m, [91m18020[0m, [91m19380[0m, [91m20740[0m, [91m22100[0m, [91m23460[0m, [91m24820[0m, [91m26180[0m, [91m27540[0m, [91m28900[0m, [91m30260[0m, 31620, 32980, 34340, 35700, 37060, ]
+Indices of used tracks: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+---
+Placement details for the #W side
+Virtual pin count:  0
+Actual pin count:  3
+Total pin count:  3
+Tracks count:  28
+Tracks per pin:  9
+Used tracks count:  19
+Unused track count:  9
+Starting track index:  4
+Placement Map:
+[340, 1700, 3060, 4420, [91m5780[0m, 7140, 8500, 9860, 11220, 12580, 13940, 15300, 16660, [91m18020[0m, 19380, 20740, 22100, 23460, 24820, 26180, 27540, 28900, [91m30260[0m, 31620, 32980, 34340, 35700, 37060, ]
+Indices of used tracks: [4, 13, 22]
+---

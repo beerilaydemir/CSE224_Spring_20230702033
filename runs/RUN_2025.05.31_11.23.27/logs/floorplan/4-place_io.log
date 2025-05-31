@@ -1,0 +1,9 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Top-level design name: TopModule
+Block boundaries: 0 0 26540 37260
+Horizontal Tracks Origin: 340, Count: 55, Step: 680
+Vertical Tracks Origin: 230, Count: 58, Step: 460
+There are more pins/virtual_pins: 32, than places to put them: 28 in the #E side. Try making your floorplan area larger.

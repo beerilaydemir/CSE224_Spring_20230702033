@@ -1,0 +1,10 @@
+%Error: Cannot find file containing module: src/project5.v
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             src/project5.v
+             src/project5.v.v
+             src/project5.v.sv
+             obj_dir/src/project5.v
+             obj_dir/src/project5.v.v
+             obj_dir/src/project5.v.sv
+%Error: Exiting due to 2 error(s)

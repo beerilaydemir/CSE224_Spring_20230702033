@@ -1,0 +1,6 @@
+<< properties >>
+string FIXED_BBOX 0 0 51221 53365
+string GDS_END 3808140
+string GDS_FILE /openlane/designs/project5/runs/RUN_2025.05.31_18.00.03/results/signoff/TopModule.magic.gds
+string GDS_START 23752
+<< end >>

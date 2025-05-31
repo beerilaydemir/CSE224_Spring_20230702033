@@ -1,0 +1,251 @@
+[
+  {
+   "pins": [
+      [
+        "VPWR",
+        "VGND",
+        "VPB",
+        "VNB"
+      ], [
+        "VPWR",
+        "VGND",
+        "VPB",
+        "VNB"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VPWR"
+      ], [
+        "VGND",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR"
+      ]
+   ]
+  },
+  {
+   "pins": [
+      [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "LO"
+      ], [
+        "VGND",
+        "VNB",
+        "VPB",
+        "VPWR",
+        "LO"
+      ]
+   ]
+  },
+  {
+   "name": [
+      "TopModule",
+      "TopModule"
+   ],
+   "devices": [
+       [
+         ["sky130_ef_sc_hd__decap_12", 1],
+         ["sky130_fd_sc_hd__decap_6", 1],
+         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 1],
+         ["sky130_fd_sc_hd__fill_1", 1],
+         ["sky130_fd_sc_hd__decap_4", 1],
+         ["sky130_fd_sc_hd__fill_2", 1],
+         ["sky130_fd_sc_hd__decap_3", 1],
+         ["sky130_fd_sc_hd__decap_8", 1],
+         ["sky130_fd_sc_hd__conb_1", 32 ]
+       ], [
+         ["sky130_ef_sc_hd__decap_12", 1 ],
+         ["sky130_fd_sc_hd__decap_6", 1 ],
+         ["sky130_fd_sc_hd__tapvpwrvgnd_1", 1 ],
+         ["sky130_fd_sc_hd__fill_1", 1 ],
+         ["sky130_fd_sc_hd__decap_4", 1 ],
+         ["sky130_fd_sc_hd__fill_2", 1 ],
+         ["sky130_fd_sc_hd__decap_3", 1 ],
+         ["sky130_fd_sc_hd__decap_8", 1 ],
+         ["sky130_fd_sc_hd__conb_1", 32 ]
+       ]
+   ],
+   "nets": [
+    66,
+    66
+   ],
+   "badnets": [
+   ],
+   "badelements": [
+   ],
+   "pins": [
+      [
+        "Result[18]",
+        "Result[17]",
+        "Result[28]",
+        "Result[16]",
+        "Result[27]",
+        "Result[15]",
+        "Result[26]",
+        "Result[14]",
+        "Result[25]",
+        "Result[13]",
+        "Result[24]",
+        "Result[12]",
+        "Result[23]",
+        "Result[11]",
+        "Result[22]",
+        "Result[10]",
+        "Result[21]",
+        "Result[31]",
+        "Result[9]",
+        "Result[20]",
+        "Result[19]",
+        "Result[30]",
+        "Result[29]",
+        "Result[8]",
+        "Result[7]",
+        "Result[6]",
+        "Result[5]",
+        "Result[4]",
+        "Result[3]",
+        "Result[2]",
+        "Result[1]",
+        "Result[0]",
+        "VGND",
+        "VPWR",
+        "clk",
+        "control",
+        "reset"
+      ], [
+        "Result[18]",
+        "Result[17]",
+        "Result[28]",
+        "Result[16]",
+        "Result[27]",
+        "Result[15]",
+        "Result[26]",
+        "Result[14]",
+        "Result[25]",
+        "Result[13]",
+        "Result[24]",
+        "Result[12]",
+        "Result[23]",
+        "Result[11]",
+        "Result[22]",
+        "Result[10]",
+        "Result[21]",
+        "Result[31]",
+        "Result[9]",
+        "Result[20]",
+        "Result[19]",
+        "Result[30]",
+        "Result[29]",
+        "Result[8]",
+        "Result[7]",
+        "Result[6]",
+        "Result[5]",
+        "Result[4]",
+        "Result[3]",
+        "Result[2]",
+        "Result[1]",
+        "Result[0]",
+        "VGND",
+        "VPWR",
+        "clk",
+        "control",
+        "reset"
+      ]
+   ]
+  }
+]

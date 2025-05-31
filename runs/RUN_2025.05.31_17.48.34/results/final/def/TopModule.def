@@ -1,0 +1,250 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN TopModule ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 26540 37260 ) ;
+ROW ROW_0 unithd 5520 10880 N DO 33 BY 1 STEP 460 0 ;
+ROW ROW_1 unithd 5520 13600 FS DO 33 BY 1 STEP 460 0 ;
+ROW ROW_2 unithd 5520 16320 N DO 33 BY 1 STEP 460 0 ;
+ROW ROW_3 unithd 5520 19040 FS DO 33 BY 1 STEP 460 0 ;
+ROW ROW_4 unithd 5520 21760 N DO 33 BY 1 STEP 460 0 ;
+TRACKS X 230 DO 58 STEP 460 LAYER li1 ;
+TRACKS Y 170 DO 109 STEP 340 LAYER li1 ;
+TRACKS X 170 DO 78 STEP 340 LAYER met1 ;
+TRACKS Y 170 DO 109 STEP 340 LAYER met1 ;
+TRACKS X 230 DO 58 STEP 460 LAYER met2 ;
+TRACKS Y 230 DO 81 STEP 460 LAYER met2 ;
+TRACKS X 340 DO 39 STEP 680 LAYER met3 ;
+TRACKS Y 340 DO 55 STEP 680 LAYER met3 ;
+TRACKS X 460 DO 29 STEP 920 LAYER met4 ;
+TRACKS Y 460 DO 40 STEP 920 LAYER met4 ;
+TRACKS X 1700 DO 8 STEP 3400 LAYER met5 ;
+TRACKS Y 1700 DO 11 STEP 3400 LAYER met5 ;
+COMPONENTS 45 ;
+    - PHY_EDGE_ROW_0_Left_5 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 5520 10880 ) N ;
+    - PHY_EDGE_ROW_0_Right_0 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 19320 10880 ) FN ;
+    - PHY_EDGE_ROW_1_Left_6 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 5520 13600 ) FS ;
+    - PHY_EDGE_ROW_1_Right_1 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 19320 13600 ) S ;
+    - PHY_EDGE_ROW_2_Left_7 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 5520 16320 ) N ;
+    - PHY_EDGE_ROW_2_Right_2 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 19320 16320 ) FN ;
+    - PHY_EDGE_ROW_3_Left_8 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 5520 19040 ) FS ;
+    - PHY_EDGE_ROW_3_Right_3 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 19320 19040 ) S ;
+    - PHY_EDGE_ROW_4_Left_9 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 5520 21760 ) N ;
+    - PHY_EDGE_ROW_4_Right_4 sky130_fd_sc_hd__decap_3 + SOURCE DIST + FIXED ( 19320 21760 ) FN ;
+    - TAP_TAPCELL_ROW_0_10 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 18400 10880 ) N ;
+    - TAP_TAPCELL_ROW_2_11 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 18400 16320 ) N ;
+    - TAP_TAPCELL_ROW_4_12 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 18400 21760 ) N ;
+    - _00_ sky130_fd_sc_hd__conb_1 ;
+    - _01_ sky130_fd_sc_hd__conb_1 ;
+    - _02_ sky130_fd_sc_hd__conb_1 ;
+    - _03_ sky130_fd_sc_hd__conb_1 ;
+    - _04_ sky130_fd_sc_hd__conb_1 ;
+    - _05_ sky130_fd_sc_hd__conb_1 ;
+    - _06_ sky130_fd_sc_hd__conb_1 ;
+    - _07_ sky130_fd_sc_hd__conb_1 ;
+    - _08_ sky130_fd_sc_hd__conb_1 ;
+    - _09_ sky130_fd_sc_hd__conb_1 ;
+    - _10_ sky130_fd_sc_hd__conb_1 ;
+    - _11_ sky130_fd_sc_hd__conb_1 ;
+    - _12_ sky130_fd_sc_hd__conb_1 ;
+    - _13_ sky130_fd_sc_hd__conb_1 ;
+    - _14_ sky130_fd_sc_hd__conb_1 ;
+    - _15_ sky130_fd_sc_hd__conb_1 ;
+    - _16_ sky130_fd_sc_hd__conb_1 ;
+    - _17_ sky130_fd_sc_hd__conb_1 ;
+    - _18_ sky130_fd_sc_hd__conb_1 ;
+    - _19_ sky130_fd_sc_hd__conb_1 ;
+    - _20_ sky130_fd_sc_hd__conb_1 ;
+    - _21_ sky130_fd_sc_hd__conb_1 ;
+    - _22_ sky130_fd_sc_hd__conb_1 ;
+    - _23_ sky130_fd_sc_hd__conb_1 ;
+    - _24_ sky130_fd_sc_hd__conb_1 ;
+    - _25_ sky130_fd_sc_hd__conb_1 ;
+    - _26_ sky130_fd_sc_hd__conb_1 ;
+    - _27_ sky130_fd_sc_hd__conb_1 ;
+    - _28_ sky130_fd_sc_hd__conb_1 ;
+    - _29_ sky130_fd_sc_hd__conb_1 ;
+    - _30_ sky130_fd_sc_hd__conb_1 ;
+    - _31_ sky130_fd_sc_hd__conb_1 ;
+END COMPONENTS
+PINS 35 ;
+    - Result[0] + NET Result[0] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 7140 ) N ;
+    - Result[10] + NET Result[10] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 20740 ) N ;
+    - Result[11] + NET Result[11] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 22100 ) N ;
+    - Result[12] + NET Result[12] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 23460 ) N ;
+    - Result[13] + NET Result[13] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 24820 ) N ;
+    - Result[14] + NET Result[14] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 26180 ) N ;
+    - Result[15] + NET Result[15] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 27540 ) N ;
+    - Result[16] + NET Result[16] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 28900 ) N ;
+    - Result[17] + NET Result[17] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 30260 ) N ;
+    - Result[18] + NET Result[18] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 1150 35260 ) N ;
+    - Result[19] + NET Result[19] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 2990 35260 ) N ;
+    - Result[1] + NET Result[1] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 8500 ) N ;
+    - Result[20] + NET Result[20] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 4830 35260 ) N ;
+    - Result[21] + NET Result[21] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 6670 35260 ) N ;
+    - Result[22] + NET Result[22] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 8510 35260 ) N ;
+    - Result[23] + NET Result[23] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 10350 35260 ) N ;
+    - Result[24] + NET Result[24] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 12190 35260 ) N ;
+    - Result[25] + NET Result[25] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 14030 35260 ) N ;
+    - Result[26] + NET Result[26] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 15870 35260 ) N ;
+    - Result[27] + NET Result[27] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 17710 35260 ) N ;
+    - Result[28] + NET Result[28] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 19550 35260 ) N ;
+    - Result[29] + NET Result[29] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 21390 35260 ) N ;
+    - Result[2] + NET Result[2] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 9860 ) N ;
+    - Result[30] + NET Result[30] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 23230 35260 ) N ;
+    - Result[31] + NET Result[31] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met2 ( -140 -2000 ) ( 140 2000 )
+        + PLACED ( 25070 35260 ) N ;
+    - Result[3] + NET Result[3] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 11220 ) N ;
+    - Result[4] + NET Result[4] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 12580 ) N ;
+    - Result[5] + NET Result[5] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 13940 ) N ;
+    - Result[6] + NET Result[6] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 15300 ) N ;
+    - Result[7] + NET Result[7] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 16660 ) N ;
+    - Result[8] + NET Result[8] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 18020 ) N ;
+    - Result[9] + NET Result[9] + DIRECTION OUTPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 24540 19380 ) N ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 5780 ) N ;
+    - control + NET control + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 30260 ) N ;
+    - reset + NET reset + DIRECTION INPUT + USE SIGNAL
+      + PORT
+        + LAYER met3 ( -2000 -300 ) ( 2000 300 )
+        + PLACED ( 2000 18020 ) N ;
+END PINS
+NETS 35 ;
+    - Result[0] ( PIN Result[0] ) ( _00_ LO ) + USE SIGNAL ;
+    - Result[10] ( PIN Result[10] ) ( _10_ LO ) + USE SIGNAL ;
+    - Result[11] ( PIN Result[11] ) ( _11_ LO ) + USE SIGNAL ;
+    - Result[12] ( PIN Result[12] ) ( _12_ LO ) + USE SIGNAL ;
+    - Result[13] ( PIN Result[13] ) ( _13_ LO ) + USE SIGNAL ;
+    - Result[14] ( PIN Result[14] ) ( _14_ LO ) + USE SIGNAL ;
+    - Result[15] ( PIN Result[15] ) ( _15_ LO ) + USE SIGNAL ;
+    - Result[16] ( PIN Result[16] ) ( _16_ LO ) + USE SIGNAL ;
+    - Result[17] ( PIN Result[17] ) ( _17_ LO ) + USE SIGNAL ;
+    - Result[18] ( PIN Result[18] ) ( _18_ LO ) + USE SIGNAL ;
+    - Result[19] ( PIN Result[19] ) ( _19_ LO ) + USE SIGNAL ;
+    - Result[1] ( PIN Result[1] ) ( _01_ LO ) + USE SIGNAL ;
+    - Result[20] ( PIN Result[20] ) ( _20_ LO ) + USE SIGNAL ;
+    - Result[21] ( PIN Result[21] ) ( _21_ LO ) + USE SIGNAL ;
+    - Result[22] ( PIN Result[22] ) ( _22_ LO ) + USE SIGNAL ;
+    - Result[23] ( PIN Result[23] ) ( _23_ LO ) + USE SIGNAL ;
+    - Result[24] ( PIN Result[24] ) ( _24_ LO ) + USE SIGNAL ;
+    - Result[25] ( PIN Result[25] ) ( _25_ LO ) + USE SIGNAL ;
+    - Result[26] ( PIN Result[26] ) ( _26_ LO ) + USE SIGNAL ;
+    - Result[27] ( PIN Result[27] ) ( _27_ LO ) + USE SIGNAL ;
+    - Result[28] ( PIN Result[28] ) ( _28_ LO ) + USE SIGNAL ;
+    - Result[29] ( PIN Result[29] ) ( _29_ LO ) + USE SIGNAL ;
+    - Result[2] ( PIN Result[2] ) ( _02_ LO ) + USE SIGNAL ;
+    - Result[30] ( PIN Result[30] ) ( _30_ LO ) + USE SIGNAL ;
+    - Result[31] ( PIN Result[31] ) ( _31_ LO ) + USE SIGNAL ;
+    - Result[3] ( PIN Result[3] ) ( _03_ LO ) + USE SIGNAL ;
+    - Result[4] ( PIN Result[4] ) ( _04_ LO ) + USE SIGNAL ;
+    - Result[5] ( PIN Result[5] ) ( _05_ LO ) + USE SIGNAL ;
+    - Result[6] ( PIN Result[6] ) ( _06_ LO ) + USE SIGNAL ;
+    - Result[7] ( PIN Result[7] ) ( _07_ LO ) + USE SIGNAL ;
+    - Result[8] ( PIN Result[8] ) ( _08_ LO ) + USE SIGNAL ;
+    - Result[9] ( PIN Result[9] ) ( _09_ LO ) + USE SIGNAL ;
+    - clk ( PIN clk ) + USE SIGNAL ;
+    - control ( PIN control ) + USE SIGNAL ;
+    - reset ( PIN reset ) + USE SIGNAL ;
+END NETS
+END DESIGN

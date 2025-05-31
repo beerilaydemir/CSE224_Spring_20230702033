@@ -1,0 +1,249 @@
+OpenROAD b16bda7e82721d10566ff7e2b68f1ff0be9f9e38 
+Features included (+) or not (-): +Charts +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+define_corners Typical
+read_liberty -corner Typical /home/beeri/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Using 1e-12 for capacitance...
+Using 1e+03 for resistance...
+Using 1e-09 for time...
+Using 1e+00 for voltage...
+Using 1e-03 for current...
+Using 1e-09 for power...
+Using 1e-06 for distance...
+[INFO]: Reading ODB at '/openlane/designs/project5/runs/RUN_2025.05.31_18.00.03/tmp/routing/19-global.odb'…
+Reading design constraints file at '/openlane/scripts/base.sdc'…
+[INFO]: Setting output delay to: 2.0
+[INFO]: Setting input delay to: 2.0
+[INFO]: Setting load to: 0.033442
+[INFO]: Setting clock uncertainty to: 0.25
+[INFO]: Setting clock transition to: 0.15
+[INFO]: Setting timing derate to: 5.0 %
+[INFO]: Propagating all clocks
+min_report
+
+===========================================================================
+report_checks -path_delay min (Hold)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+worst slack corner Typical: INF
+min_report_end
+max_report
+
+===========================================================================
+report_checks -path_delay max (Setup)
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+worst slack corner Typical: INF
+max_report_end
+checks_report
+
+===========================================================================
+report_checks -unconstrained
+===========================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+report_checks --slack_max -0.01
+============================================================================
+======================= Typical Corner ===================================
+
+No paths found.
+
+
+===========================================================================
+ report_check_types -max_slew -max_cap -max_fanout -violators
+============================================================================
+======================= Typical Corner ===================================
+
+
+max slew violations count Typical: 0
+max fanout violations count Typical: 0
+max cap violations count Typical: 0
+
+===========================================================================
+report_parasitic_annotation -report_unannotated
+============================================================================
+Found 67 unannotated drivers.
+ clk
+ control
+ reset
+ TopModule_1/HI
+ TopModule_1/LO
+ TopModule_10/HI
+ TopModule_10/LO
+ TopModule_11/HI
+ TopModule_11/LO
+ TopModule_12/HI
+ TopModule_12/LO
+ TopModule_13/HI
+ TopModule_13/LO
+ TopModule_14/HI
+ TopModule_14/LO
+ TopModule_15/HI
+ TopModule_15/LO
+ TopModule_16/HI
+ TopModule_16/LO
+ TopModule_17/HI
+ TopModule_17/LO
+ TopModule_18/HI
+ TopModule_18/LO
+ TopModule_19/HI
+ TopModule_19/LO
+ TopModule_2/HI
+ TopModule_2/LO
+ TopModule_20/HI
+ TopModule_20/LO
+ TopModule_21/HI
+ TopModule_21/LO
+ TopModule_22/HI
+ TopModule_22/LO
+ TopModule_23/HI
+ TopModule_23/LO
+ TopModule_24/HI
+ TopModule_24/LO
+ TopModule_25/HI
+ TopModule_25/LO
+ TopModule_26/HI
+ TopModule_26/LO
+ TopModule_27/HI
+ TopModule_27/LO
+ TopModule_28/HI
+ TopModule_28/LO
+ TopModule_29/HI
+ TopModule_29/LO
+ TopModule_3/HI
+ TopModule_3/LO
+ TopModule_30/HI
+ TopModule_30/LO
+ TopModule_31/HI
+ TopModule_31/LO
+ TopModule_32/HI
+ TopModule_32/LO
+ TopModule_4/HI
+ TopModule_4/LO
+ TopModule_5/HI
+ TopModule_5/LO
+ TopModule_6/HI
+ TopModule_6/LO
+ TopModule_7/HI
+ TopModule_7/LO
+ TopModule_8/HI
+ TopModule_8/LO
+ TopModule_9/HI
+ TopModule_9/LO
+Found 0 partially unannotated drivers.
+
+===========================================================================
+max slew violation count 0
+max fanout violation count 0
+max cap violation count 0
+============================================================================
+
+===========================================================================
+check_setup -verbose -unconstrained_endpoints -multiple_clock -no_clock -no_input_delay -loops -generated_clocks
+===========================================================================
+Warning: There are 32 unconstrained endpoints.
+  Result[0]
+  Result[10]
+  Result[11]
+  Result[12]
+  Result[13]
+  Result[14]
+  Result[15]
+  Result[16]
+  Result[17]
+  Result[18]
+  Result[19]
+  Result[1]
+  Result[20]
+  Result[21]
+  Result[22]
+  Result[23]
+  Result[24]
+  Result[25]
+  Result[26]
+  Result[27]
+  Result[28]
+  Result[29]
+  Result[2]
+  Result[30]
+  Result[31]
+  Result[3]
+  Result[4]
+  Result[5]
+  Result[6]
+  Result[7]
+  Result[8]
+  Result[9]
+checks_report_end
+power_report
+
+===========================================================================
+ report_power
+============================================================================
+======================= Typical Corner ===================================
+
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          0.00e+00   0.00e+00   1.04e-10   1.04e-10  15.1%
+Clock                  0.00e+00   0.00e+00   5.83e-10   5.83e-10  84.9%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  0.00e+00   0.00e+00   6.87e-10   6.87e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+power_report_end
+skew_report
+
+===========================================================================
+report_clock_skew
+============================================================================
+Clock clk
+No launch/capture paths found.
+
+skew_report_end
+summary_report
+
+===========================================================================
+report_tns
+============================================================================
+tns 0.00
+
+===========================================================================
+report_wns
+============================================================================
+wns 0.00
+
+===========================================================================
+report_worst_slack -max (Setup)
+============================================================================
+worst slack INF
+
+===========================================================================
+report_worst_slack -min (Hold)
+============================================================================
+worst slack INF
+summary_report_end
+area_report
+
+===========================================================================
+report_design_area
+============================================================================
+Design area 1156 u^2 2% utilization.
+area_report_end
+check_nonpropagated_clocks
+check_nonpropagated_clocks_end
+[WARNING] Did not save OpenROAD database!
