@@ -1,0 +1,3808 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/beeri/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/designs/project6/src/TopModule.v
+Parsing SystemVerilog input from `/openlane/designs/project6/src/TopModule.v' to AST representation.
+Storing AST representation for module `$abstract\ProgramCounter'.
+Storing AST representation for module `$abstract\InstructionMemory'.
+Storing AST representation for module `$abstract\RegisterFile'.
+Storing AST representation for module `$abstract\ALU3'.
+Storing AST representation for module `$abstract\InstructionDecoder'.
+Storing AST representation for module `$abstract\TopModule'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\TopModule'.
+Generating RTLIL representation for module `\TopModule'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \TopModule
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\ALU3'.
+Generating RTLIL representation for module `\ALU3'.
+
+4.3. Executing AST frontend in derive mode using pre-parsed AST for module `\RegisterFile'.
+Generating RTLIL representation for module `\RegisterFile'.
+
+4.4. Executing AST frontend in derive mode using pre-parsed AST for module `\InstructionDecoder'.
+Generating RTLIL representation for module `\InstructionDecoder'.
+
+4.5. Executing AST frontend in derive mode using pre-parsed AST for module `\InstructionMemory'.
+Generating RTLIL representation for module `\InstructionMemory'.
+
+4.6. Executing AST frontend in derive mode using pre-parsed AST for module `\ProgramCounter'.
+Generating RTLIL representation for module `\ProgramCounter'.
+
+4.7. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+
+4.8. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+Removing unused module `$abstract\TopModule'.
+Removing unused module `$abstract\InstructionDecoder'.
+Removing unused module `$abstract\ALU3'.
+Removing unused module `$abstract\RegisterFile'.
+Removing unused module `$abstract\InstructionMemory'.
+Removing unused module `$abstract\ProgramCounter'.
+Removed 6 unused modules.
+Mapping positional arguments of cell TopModule.alu (ALU3).
+Mapping positional arguments of cell TopModule.rf (RegisterFile).
+Mapping positional arguments of cell TopModule.decoder (InstructionDecoder).
+Mapping positional arguments of cell TopModule.imem (InstructionMemory).
+Mapping positional arguments of cell TopModule.pc_unit (ProgramCounter).
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/hierarchy.dot'.
+Dumping module TopModule to page 1.
+Renaming module TopModule to TopModule.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+
+7.2. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \RegisterFile
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/project6/src/TopModule.v:107$19 in module InstructionDecoder.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/project6/src/TopModule.v:72$12 in module RegisterFile.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/project6/src/TopModule.v:84$2 in module ALU3.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/project6/src/TopModule.v:29$41 in module ProgramCounter.
+Removed a total of 0 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 17 assignments to connections.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \reset in `\ProgramCounter.$proc$/openlane/designs/project6/src/TopModule.v:29$41'.
+
+13. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~4 debug messages>
+
+14. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+Creating decoders for process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:52$26'.
+Creating decoders for process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+     1/6: $1\write_en[0:0]
+     2/6: $1\isImmediate[0:0]
+     3/6: $1\imm[31:0]
+     4/6: $1\rs2[4:0]
+     5/6: $1\rs1[4:0]
+     6/6: $1\rd[4:0]
+Creating decoders for process `\RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+     1/3: $1$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$18
+     2/3: $1$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_DATA[31:0]$17
+     3/3: $1$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_ADDR[4:0]$16
+Creating decoders for process `\ALU3.$proc$/openlane/designs/project6/src/TopModule.v:84$2'.
+     1/1: $1\result[31:0]
+Creating decoders for process `\ProgramCounter.$proc$/openlane/designs/project6/src/TopModule.v:29$41'.
+     1/1: $0\pc_out[4:0]
+
+15. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:44$20_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:45$21_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:46$22_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:47$23_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:48$24_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.$memwr$\memory$/openlane/designs/project6/src/TopModule.v:49$25_EN' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+No latch inferred for signal `\InstructionMemory.\instruction' from process `\InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:52$26'.
+No latch inferred for signal `\InstructionDecoder.\rd' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\InstructionDecoder.\rs1' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\InstructionDecoder.\rs2' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\InstructionDecoder.\imm' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\InstructionDecoder.\isImmediate' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\InstructionDecoder.\write_en' from process `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+No latch inferred for signal `\ALU3.\result' from process `\ALU3.$proc$/openlane/designs/project6/src/TopModule.v:84$2'.
+
+16. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\RegisterFile.$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_ADDR' using process `\RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+  created $dff cell `$procdff$85' with positive edge clock.
+Creating register for signal `\RegisterFile.$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_DATA' using process `\RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+  created $dff cell `$procdff$86' with positive edge clock.
+Creating register for signal `\RegisterFile.$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN' using process `\RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+  created $dff cell `$procdff$87' with positive edge clock.
+Creating register for signal `\ProgramCounter.\pc_out' using process `\ProgramCounter.$proc$/openlane/designs/project6/src/TopModule.v:29$41'.
+  created $adff cell `$procdff$88' with positive edge clock and positive level reset.
+
+17. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:0$34'.
+Removing empty process `InstructionMemory.$proc$/openlane/designs/project6/src/TopModule.v:52$26'.
+Found and cleaned up 1 empty switch in `\InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+Removing empty process `InstructionDecoder.$proc$/openlane/designs/project6/src/TopModule.v:107$19'.
+Found and cleaned up 1 empty switch in `\RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+Removing empty process `RegisterFile.$proc$/openlane/designs/project6/src/TopModule.v:72$12'.
+Found and cleaned up 1 empty switch in `\ALU3.$proc$/openlane/designs/project6/src/TopModule.v:84$2'.
+Removing empty process `ALU3.$proc$/openlane/designs/project6/src/TopModule.v:84$2'.
+Found and cleaned up 1 empty switch in `\ProgramCounter.$proc$/openlane/designs/project6/src/TopModule.v:29$41'.
+Removing empty process `ProgramCounter.$proc$/openlane/designs/project6/src/TopModule.v:29$41'.
+Cleaned up 4 empty switches.
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module TopModule...
+Checking module InstructionMemory...
+Checking module InstructionDecoder...
+Checking module RegisterFile...
+Checking module ALU3...
+Checking module ProgramCounter...
+Found and reported 0 problems.
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+Optimizing module InstructionMemory.
+Optimizing module InstructionDecoder.
+Optimizing module RegisterFile.
+Optimizing module ALU3.
+Optimizing module ProgramCounter.
+
+21. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+Optimizing module InstructionMemory.
+Optimizing module InstructionDecoder.
+Optimizing module RegisterFile.
+Optimizing module ALU3.
+Optimizing module ProgramCounter.
+
+22. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \ProgramCounter..
+Removed 3 unused cells and 52 unused wires.
+<suppressed ~9 debug messages>
+
+23. Executing OPT pass (performing simple optimizations).
+
+23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\InstructionDecoder'.
+<suppressed ~81 debug messages>
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 29 cells.
+
+23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+    New ctrl vector for $pmux cell $procmux$76: { $procmux$80_CMP $procmux$79_CMP $auto$opt_reduce.cc:134:opt_pmux$93 $auto$opt_reduce.cc:134:opt_pmux$91 }
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+    New ctrl vector for $pmux cell $procmux$44: $auto$opt_reduce.cc:134:opt_pmux$95
+    New ctrl vector for $pmux cell $procmux$63: $auto$opt_reduce.cc:134:opt_pmux$97
+    New ctrl vector for $pmux cell $procmux$59: $auto$opt_reduce.cc:134:opt_pmux$99
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_pmux$94: { $procmux$45_CMP $procmux$46_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_pmux$96: { $procmux$45_CMP $procmux$46_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_pmux$98: { $procmux$45_CMP $procmux$46_CMP }
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+    Consolidated identical input bits for $mux cell $procmux$67:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15
+      New ports: A=1'0, B=1'1, Y=$0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0]
+      New connections: $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [31:1] = { $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] $0$memwr$\registers$/openlane/designs/project6/src/TopModule.v:74$9_EN[31:0]$15 [0] }
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 8 changes.
+
+23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 2 cells.
+
+23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~2 debug messages>
+
+23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+23.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+23.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+23.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+23.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+23.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+23.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+23.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+23.16. Finished OPT passes. (There is nothing left to do.)
+
+24. Executing FSM pass (extract and optimize FSM).
+
+24.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+24.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+24.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+24.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+24.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+24.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+24.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+25. Executing OPT pass (performing simple optimizations).
+
+25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+25.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+25.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+25.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+25.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$88 ($adff) from module ProgramCounter (D = $add$/openlane/designs/project6/src/TopModule.v:33$42_Y [4:0], Q = \pc_out).
+
+25.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+25.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+25.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+25.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+25.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+25.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+25.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+25.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+25.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+25.16. Finished OPT passes. (There is nothing left to do.)
+
+26. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell ALU3.$procmux$81_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell ALU3.$procmux$82_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell InstructionDecoder.$procmux$45_CMP1 ($eq).
+Removed top 1 bits (of 3) from port B of cell InstructionDecoder.$procmux$45_CMP0 ($eq).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:44$28 (memory).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:45$29 (memory).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:46$30 (memory).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:47$31 (memory).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:48$32 (memory).
+Removed top 27 address bits (of 32) from memory init port InstructionMemory.$meminit$\memory$/openlane/designs/project6/src/TopModule.v:49$33 (memory).
+Removed top 31 bits (of 32) from port B of cell ProgramCounter.$add$/openlane/designs/project6/src/TopModule.v:33$42 ($add).
+Removed top 27 bits (of 32) from port Y of cell ProgramCounter.$add$/openlane/designs/project6/src/TopModule.v:33$42 ($add).
+Removed top 27 bits (of 32) from wire ProgramCounter.$add$/openlane/designs/project6/src/TopModule.v:33$42_Y.
+
+27. Executing PEEPOPT pass (run peephole optimizers).
+
+28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+29. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module ALU3:
+  creating $macc model for $add$/openlane/designs/project6/src/TopModule.v:86$3 ($add).
+  creating $macc model for $sub$/openlane/designs/project6/src/TopModule.v:87$4 ($sub).
+  creating $alu model for $macc $sub$/openlane/designs/project6/src/TopModule.v:87$4.
+  creating $alu model for $macc $add$/openlane/designs/project6/src/TopModule.v:86$3.
+  creating $alu cell for $add$/openlane/designs/project6/src/TopModule.v:86$3: $auto$alumacc.cc:485:replace_alu$102
+  creating $alu cell for $sub$/openlane/designs/project6/src/TopModule.v:87$4: $auto$alumacc.cc:485:replace_alu$105
+  created 2 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module InstructionDecoder:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module InstructionMemory:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module ProgramCounter:
+  creating $macc model for $add$/openlane/designs/project6/src/TopModule.v:33$42 ($add).
+  creating $alu model for $macc $add$/openlane/designs/project6/src/TopModule.v:33$42.
+  creating $alu cell for $add$/openlane/designs/project6/src/TopModule.v:33$42: $auto$alumacc.cc:485:replace_alu$108
+  created 1 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module RegisterFile:
+  created 0 $alu and 0 $macc cells.
+Extracting $alu and $macc cells in module TopModule:
+  created 0 $alu and 0 $macc cells.
+
+30. Executing SHARE pass (SAT-based resource sharing).
+Found 2 cells in module ALU3 that may be considered for resource sharing.
+  Analyzing resource sharing options for $shr$/openlane/designs/project6/src/TopModule.v:89$6 ($shr):
+    Found 1 activation_patterns using ctrl signal $procmux$79_CMP.
+    No candidates found.
+  Analyzing resource sharing options for $shl$/openlane/designs/project6/src/TopModule.v:88$5 ($shl):
+    Found 1 activation_patterns using ctrl signal $procmux$80_CMP.
+    No candidates found.
+
+31. Executing OPT pass (performing simple optimizations).
+
+31.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+31.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+31.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+31.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+31.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+31.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+31.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+31.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+31.9. Finished OPT passes. (There is nothing left to do.)
+
+32. Executing MEMORY pass.
+
+32.1. Executing OPT_MEM pass (optimize memories).
+InstructionMemory.memory: removing const-0 lane 4
+InstructionMemory.memory: removing const-0 lane 5
+InstructionMemory.memory: removing const-0 lane 6
+InstructionMemory.memory: removing const-0 lane 7
+InstructionMemory.memory: removing const-0 lane 8
+InstructionMemory.memory: removing const-0 lane 9
+InstructionMemory.memory: removing const-0 lane 10
+InstructionMemory.memory: removing const-0 lane 15
+InstructionMemory.memory: removing const-0 lane 18
+InstructionMemory.memory: removing const-0 lane 29
+InstructionMemory.memory: removing const-0 lane 30
+InstructionMemory.memory: removing const-0 lane 31
+Performed a total of 1 transformations.
+
+32.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+32.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing RegisterFile.registers write port 0.
+
+32.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+32.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\memory'[0] in module `\InstructionMemory': no output FF found.
+Checking read port address `\memory'[0] in module `\InstructionMemory': no address FF found.
+Checking read port `\registers'[0] in module `\RegisterFile': no output FF found.
+Checking read port `\registers'[1] in module `\RegisterFile': no output FF found.
+Checking read port address `\registers'[0] in module `\RegisterFile': no address FF found.
+Checking read port address `\registers'[1] in module `\RegisterFile': no address FF found.
+
+32.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+32.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating read ports of memory RegisterFile.registers by address:
+
+32.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+32.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+32.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+33. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+34. Executing OPT pass (performing simple optimizations).
+
+34.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+<suppressed ~2 debug messages>
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+<suppressed ~3 debug messages>
+Optimizing module TopModule.
+
+34.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+34.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+34.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~2 debug messages>
+
+34.5. Finished fast OPT passes.
+
+35. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \memory in module \InstructionMemory:
+  created 32 $dff cells and 0 static cells of width 20.
+  read interface: 0 $dff and 31 $mux cells.
+  write interface: 0 write mux blocks.
+Mapping memory \registers in module \RegisterFile:
+  created 32 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 62 $mux cells.
+  write interface: 32 write mux blocks.
+
+36. Executing OPT pass (performing simple optimizations).
+
+36.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+<suppressed ~23 debug messages>
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+<suppressed ~10 debug messages>
+Optimizing module TopModule.
+
+36.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+36.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~41 debug messages>
+
+36.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+    Consolidated identical input bits for $mux cell $procmux$53:
+      Old ports: A=0, B={ \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18] \instruction [18:0] }, Y=\imm
+      New ports: A=19'0000000000000000000, B=\instruction [18:0], Y=\imm [18:0]
+      New connections: \imm [31:19] = { \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] \imm [18] }
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][4][1]$165:
+      Old ports: A=20'01011001011011110000, B=20'11110100110100000101, Y=$memory\memory$rdmux[0][3][0]$b$140
+      New ports: A=2'10, B=2'01, Y={ $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [0] }
+      New connections: { $memory\memory$rdmux[0][3][0]$b$140 [19:5] $memory\memory$rdmux[0][3][0]$b$140 [3:1] } = { $memory\memory$rdmux[0][3][0]$b$140 [0] 1'1 $memory\memory$rdmux[0][3][0]$b$140 [0] 1'1 $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [0] 1'0 $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [0] 1'1 $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [0] $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [4] 1'0 $memory\memory$rdmux[0][3][0]$b$140 [0] 1'0 }
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][4][0]$162:
+      Old ports: A=20'11001010000000001010, B=20'11001111000000001111, Y=$memory\memory$rdmux[0][3][0]$a$139
+      New ports: A=1'0, B=1'1, Y=$memory\memory$rdmux[0][3][0]$a$139 [0]
+      New connections: $memory\memory$rdmux[0][3][0]$a$139 [19:1] = { 5'11001 $memory\memory$rdmux[0][3][0]$a$139 [0] 1'1 $memory\memory$rdmux[0][3][0]$a$139 [0] 9'000000001 $memory\memory$rdmux[0][3][0]$a$139 [0] 1'1 }
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][4][2]$168:
+      Old ports: A=20'11000101000000000010, B=20'10011110110101010000, Y=$memory\memory$rdmux[0][3][1]$a$142
+      New ports: A=2'01, B=2'10, Y={ $memory\memory$rdmux[0][3][1]$a$142 [4] $memory\memory$rdmux[0][3][1]$a$142 [1] }
+      New connections: { $memory\memory$rdmux[0][3][1]$a$142 [19:5] $memory\memory$rdmux[0][3][1]$a$142 [3:2] $memory\memory$rdmux[0][3][1]$a$142 [0] } = { 1'1 $memory\memory$rdmux[0][3][1]$a$142 [1] 1'0 $memory\memory$rdmux[0][3][1]$a$142 [4] $memory\memory$rdmux[0][3][1]$a$142 [4] 1'1 $memory\memory$rdmux[0][3][1]$a$142 [4] $memory\memory$rdmux[0][3][1]$a$142 [1] $memory\memory$rdmux[0][3][1]$a$142 [4] $memory\memory$rdmux[0][3][1]$a$142 [4] 1'0 $memory\memory$rdmux[0][3][1]$a$142 [4] 1'0 $memory\memory$rdmux[0][3][1]$a$142 [4] 4'0000 }
+  Optimizing cells in module \InstructionMemory.
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][3][1]$141:
+      Old ports: A=$memory\memory$rdmux[0][3][1]$a$142, B=20'x, Y=$memory\memory$rdmux[0][2][0]$b$128
+      New ports: A={ 1'1 $memory\memory$rdmux[0][3][1]$a$142 [4] $memory\memory$rdmux[0][3][1]$a$142 [1] 1'0 }, B=4'x, Y={ $memory\memory$rdmux[0][2][0]$b$128 [14] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [1:0] }
+      New connections: { $memory\memory$rdmux[0][2][0]$b$128 [19:15] $memory\memory$rdmux[0][2][0]$b$128 [13:5] $memory\memory$rdmux[0][2][0]$b$128 [3:2] } = { $memory\memory$rdmux[0][2][0]$b$128 [14] $memory\memory$rdmux[0][2][0]$b$128 [1:0] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [1] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [0] }
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][3][0]$138:
+      Old ports: A=$memory\memory$rdmux[0][3][0]$a$139, B=$memory\memory$rdmux[0][3][0]$b$140, Y=$memory\memory$rdmux[0][2][0]$a$127
+      New ports: A={ 2'11 $memory\memory$rdmux[0][3][0]$a$139 [0] 4'0001 $memory\memory$rdmux[0][3][0]$a$139 [0] }, B={ $memory\memory$rdmux[0][3][0]$b$140 [0] $memory\memory$rdmux[0][3][0]$b$140 [4] $memory\memory$rdmux[0][3][0]$b$140 [4] 1'1 $memory\memory$rdmux[0][3][0]$b$140 [0] $memory\memory$rdmux[0][3][0]$b$140 [4] 1'0 $memory\memory$rdmux[0][3][0]$b$140 [0] }, Y={ $memory\memory$rdmux[0][2][0]$a$127 [19] $memory\memory$rdmux[0][2][0]$a$127 [15] $memory\memory$rdmux[0][2][0]$a$127 [12] $memory\memory$rdmux[0][2][0]$a$127 [10] $memory\memory$rdmux[0][2][0]$a$127 [8] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [1:0] }
+      New connections: { $memory\memory$rdmux[0][2][0]$a$127 [18:16] $memory\memory$rdmux[0][2][0]$a$127 [14:13] $memory\memory$rdmux[0][2][0]$a$127 [11] $memory\memory$rdmux[0][2][0]$a$127 [9] $memory\memory$rdmux[0][2][0]$a$127 [7:5] $memory\memory$rdmux[0][2][0]$a$127 [3:2] } = { 1'1 $memory\memory$rdmux[0][2][0]$a$127 [8] $memory\memory$rdmux[0][2][0]$a$127 [10] $memory\memory$rdmux[0][2][0]$a$127 [0] $memory\memory$rdmux[0][2][0]$a$127 [1] $memory\memory$rdmux[0][2][0]$a$127 [8] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [1:0] }
+  Optimizing cells in module \InstructionMemory.
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][2][0]$126:
+      Old ports: A=$memory\memory$rdmux[0][2][0]$a$127, B=$memory\memory$rdmux[0][2][0]$b$128, Y=$memory\memory$rdmux[0][1][0]$a$121
+      New ports: A={ $memory\memory$rdmux[0][2][0]$a$127 [19] 1'1 $memory\memory$rdmux[0][2][0]$a$127 [8] $memory\memory$rdmux[0][2][0]$a$127 [15] $memory\memory$rdmux[0][2][0]$a$127 [0] $memory\memory$rdmux[0][2][0]$a$127 [1] $memory\memory$rdmux[0][2][0]$a$127 [12] $memory\memory$rdmux[0][2][0]$a$127 [10] $memory\memory$rdmux[0][2][0]$a$127 [8] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [4] $memory\memory$rdmux[0][2][0]$a$127 [1] $memory\memory$rdmux[0][2][0]$a$127 [1:0] }, B={ $memory\memory$rdmux[0][2][0]$b$128 [14] $memory\memory$rdmux[0][2][0]$b$128 [1:0] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [14] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [1] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [4] $memory\memory$rdmux[0][2][0]$b$128 [0] $memory\memory$rdmux[0][2][0]$b$128 [1:0] }, Y={ $memory\memory$rdmux[0][1][0]$a$121 [19:17] $memory\memory$rdmux[0][1][0]$a$121 [15:12] $memory\memory$rdmux[0][1][0]$a$121 [10] $memory\memory$rdmux[0][1][0]$a$121 [8] $memory\memory$rdmux[0][1][0]$a$121 [5:3] $memory\memory$rdmux[0][1][0]$a$121 [1:0] }
+      New connections: { $memory\memory$rdmux[0][1][0]$a$121 [16] $memory\memory$rdmux[0][1][0]$a$121 [11] $memory\memory$rdmux[0][1][0]$a$121 [9] $memory\memory$rdmux[0][1][0]$a$121 [7:6] $memory\memory$rdmux[0][1][0]$a$121 [2] } = { $memory\memory$rdmux[0][1][0]$a$121 [10] $memory\memory$rdmux[0][1][0]$a$121 [8] $memory\memory$rdmux[0][1][0]$a$121 [5] $memory\memory$rdmux[0][1][0]$a$121 [5:4] $memory\memory$rdmux[0][1][0]$a$121 [0] }
+  Optimizing cells in module \InstructionMemory.
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][1][0]$120:
+      Old ports: A=$memory\memory$rdmux[0][1][0]$a$121, B=20'x, Y=$memory\memory$rdmux[0][0][0]$a$118
+      New ports: A={ $memory\memory$rdmux[0][1][0]$a$121 [19:17] $memory\memory$rdmux[0][1][0]$a$121 [15:12] $memory\memory$rdmux[0][1][0]$a$121 [10] $memory\memory$rdmux[0][1][0]$a$121 [8] $memory\memory$rdmux[0][1][0]$a$121 [5:3] $memory\memory$rdmux[0][1][0]$a$121 [1:0] }, B=14'x, Y={ $memory\memory$rdmux[0][0][0]$a$118 [19:17] $memory\memory$rdmux[0][0][0]$a$118 [15:12] $memory\memory$rdmux[0][0][0]$a$118 [10] $memory\memory$rdmux[0][0][0]$a$118 [8] $memory\memory$rdmux[0][0][0]$a$118 [5:3] $memory\memory$rdmux[0][0][0]$a$118 [1:0] }
+      New connections: { $memory\memory$rdmux[0][0][0]$a$118 [16] $memory\memory$rdmux[0][0][0]$a$118 [11] $memory\memory$rdmux[0][0][0]$a$118 [9] $memory\memory$rdmux[0][0][0]$a$118 [7:6] $memory\memory$rdmux[0][0][0]$a$118 [2] } = { $memory\memory$rdmux[0][0][0]$a$118 [10] $memory\memory$rdmux[0][0][0]$a$118 [8] $memory\memory$rdmux[0][0][0]$a$118 [5] $memory\memory$rdmux[0][0][0]$a$118 [5:4] $memory\memory$rdmux[0][0][0]$a$118 [0] }
+  Optimizing cells in module \InstructionMemory.
+    Consolidated identical input bits for $mux cell $memory\memory$rdmux[0][0][0]$117:
+      Old ports: A=$memory\memory$rdmux[0][0][0]$a$118, B=20'x, Y={ \instruction [28:19] \instruction [17:16] \instruction [14:11] \instruction [3:0] }
+      New ports: A={ $memory\memory$rdmux[0][0][0]$a$118 [19:17] $memory\memory$rdmux[0][0][0]$a$118 [15:12] $memory\memory$rdmux[0][0][0]$a$118 [10] $memory\memory$rdmux[0][0][0]$a$118 [8] $memory\memory$rdmux[0][0][0]$a$118 [5:3] $memory\memory$rdmux[0][0][0]$a$118 [1:0] }, B=14'x, Y={ \instruction [28:26] \instruction [24:21] \instruction [19] \instruction [16] \instruction [12:11] \instruction [3] \instruction [1:0] }
+      New connections: { \instruction [25] \instruction [20] \instruction [17] \instruction [14:13] \instruction [2] } = { \instruction [19] \instruction [16] \instruction [12] \instruction [12:11] \instruction [0] }
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 9 changes.
+
+36.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+36.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $procmux$76 in front of them:
+        $auto$alumacc.cc:485:replace_alu$105
+        $auto$alumacc.cc:485:replace_alu$102
+
+36.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 162 unused wires.
+<suppressed ~3 debug messages>
+
+36.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+<suppressed ~1 debug messages>
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+<suppressed ~4 debug messages>
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+36.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+36.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~42 debug messages>
+
+36.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+    New ctrl vector for $pmux cell $procmux$76: { $procmux$80_CMP $procmux$79_CMP $auto$opt_reduce.cc:134:opt_pmux$712 }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_pmux$711: { $procmux$82_CMP $procmux$81_CMP $procmux$78_CMP $procmux$77_CMP }
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 2 changes.
+
+36.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+36.14. Executing OPT_SHARE pass.
+
+36.15. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\registers[9]$228 ($dff) from module RegisterFile (D = \write_data, Q = \registers[9]).
+Adding EN signal on $memory\registers[8]$226 ($dff) from module RegisterFile (D = \write_data, Q = \registers[8]).
+Adding EN signal on $memory\registers[7]$224 ($dff) from module RegisterFile (D = \write_data, Q = \registers[7]).
+Adding EN signal on $memory\registers[6]$222 ($dff) from module RegisterFile (D = \write_data, Q = \registers[6]).
+Adding EN signal on $memory\registers[5]$220 ($dff) from module RegisterFile (D = \write_data, Q = \registers[5]).
+Adding EN signal on $memory\registers[4]$218 ($dff) from module RegisterFile (D = \write_data, Q = \registers[4]).
+Adding EN signal on $memory\registers[3]$216 ($dff) from module RegisterFile (D = \write_data, Q = \registers[3]).
+Adding EN signal on $memory\registers[31]$272 ($dff) from module RegisterFile (D = \write_data, Q = \registers[31]).
+Adding EN signal on $memory\registers[30]$270 ($dff) from module RegisterFile (D = \write_data, Q = \registers[30]).
+Adding EN signal on $memory\registers[2]$214 ($dff) from module RegisterFile (D = \write_data, Q = \registers[2]).
+Adding EN signal on $memory\registers[29]$268 ($dff) from module RegisterFile (D = \write_data, Q = \registers[29]).
+Adding EN signal on $memory\registers[28]$266 ($dff) from module RegisterFile (D = \write_data, Q = \registers[28]).
+Adding EN signal on $memory\registers[27]$264 ($dff) from module RegisterFile (D = \write_data, Q = \registers[27]).
+Adding EN signal on $memory\registers[26]$262 ($dff) from module RegisterFile (D = \write_data, Q = \registers[26]).
+Adding EN signal on $memory\registers[25]$260 ($dff) from module RegisterFile (D = \write_data, Q = \registers[25]).
+Adding EN signal on $memory\registers[24]$258 ($dff) from module RegisterFile (D = \write_data, Q = \registers[24]).
+Adding EN signal on $memory\registers[23]$256 ($dff) from module RegisterFile (D = \write_data, Q = \registers[23]).
+Adding EN signal on $memory\registers[22]$254 ($dff) from module RegisterFile (D = \write_data, Q = \registers[22]).
+Adding EN signal on $memory\registers[21]$252 ($dff) from module RegisterFile (D = \write_data, Q = \registers[21]).
+Adding EN signal on $memory\registers[20]$250 ($dff) from module RegisterFile (D = \write_data, Q = \registers[20]).
+Adding EN signal on $memory\registers[1]$212 ($dff) from module RegisterFile (D = \write_data, Q = \registers[1]).
+Adding EN signal on $memory\registers[19]$248 ($dff) from module RegisterFile (D = \write_data, Q = \registers[19]).
+Adding EN signal on $memory\registers[18]$246 ($dff) from module RegisterFile (D = \write_data, Q = \registers[18]).
+Adding EN signal on $memory\registers[17]$244 ($dff) from module RegisterFile (D = \write_data, Q = \registers[17]).
+Adding EN signal on $memory\registers[16]$242 ($dff) from module RegisterFile (D = \write_data, Q = \registers[16]).
+Adding EN signal on $memory\registers[15]$240 ($dff) from module RegisterFile (D = \write_data, Q = \registers[15]).
+Adding EN signal on $memory\registers[14]$238 ($dff) from module RegisterFile (D = \write_data, Q = \registers[14]).
+Adding EN signal on $memory\registers[13]$236 ($dff) from module RegisterFile (D = \write_data, Q = \registers[13]).
+Adding EN signal on $memory\registers[12]$234 ($dff) from module RegisterFile (D = \write_data, Q = \registers[12]).
+Adding EN signal on $memory\registers[11]$232 ($dff) from module RegisterFile (D = \write_data, Q = \registers[11]).
+Adding EN signal on $memory\registers[10]$230 ($dff) from module RegisterFile (D = \write_data, Q = \registers[10]).
+Adding EN signal on $memory\registers[0]$210 ($dff) from module RegisterFile (D = \write_data, Q = \registers[0]).
+
+36.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 33 unused cells and 37 unused wires.
+<suppressed ~36 debug messages>
+
+36.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+36.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+36.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~10 debug messages>
+
+36.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+36.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+36.22. Executing OPT_SHARE pass.
+
+36.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+36.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+36.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+36.26. Finished OPT passes. (There is nothing left to do.)
+
+37. Executing TECHMAP pass (map to technology primitives).
+
+37.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+37.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_90_alu for cells of type $alu.
+Using template $paramod$constmap:b9a86d073741c2a0f7bb241e73c2dd11747f3288$paramod$dce7c1188cb25d2520d170426d59301c3b73f9e7\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shl.
+Using template $paramod$constmap:b9a86d073741c2a0f7bb241e73c2dd11747f3288$paramod$56955d0f36f77738c952d3505dc563df3ee11b94\_90_shift_ops_shr_shl_sshl_sshr for cells of type $shr.
+Using template $paramod$54d740639e1393b22262823179ff783ea9f17a35\_90_pmux for cells of type $pmux.
+Running "alumacc" on wrapper $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod$c6baa65225090ac0a120feab1b920965244aa496\_90_alu for cells of type $alu.
+No more expansions possible.
+<suppressed ~1839 debug messages>
+
+38. Executing OPT pass (performing simple optimizations).
+
+38.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+<suppressed ~238 debug messages>
+Optimizing module InstructionDecoder.
+<suppressed ~18 debug messages>
+Optimizing module InstructionMemory.
+<suppressed ~4 debug messages>
+Optimizing module ProgramCounter.
+<suppressed ~25 debug messages>
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+38.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+<suppressed ~204 debug messages>
+Finding identical cells in module `\InstructionDecoder'.
+<suppressed ~39 debug messages>
+Finding identical cells in module `\InstructionMemory'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\ProgramCounter'.
+<suppressed ~3 debug messages>
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 83 cells.
+
+38.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+38.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 25 unused cells and 363 unused wires.
+<suppressed ~29 debug messages>
+
+38.5. Finished fast OPT passes.
+
+39. Executing ABC pass (technology mapping using ABC).
+
+39.1. Extracting gate netlist of module `\ALU3' to `<abc-temp-dir>/input.blif'..
+Extracted 1057 gates and 1125 wires to a netlist network with 67 inputs and 32 outputs.
+
+39.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.1.2. Re-integrating ABC results.
+ABC RESULTS:              XNOR cells:        3
+ABC RESULTS:               AND cells:       11
+ABC RESULTS:             ORNOT cells:       23
+ABC RESULTS:               NOR cells:       12
+ABC RESULTS:               NOT cells:       64
+ABC RESULTS:              NAND cells:       28
+ABC RESULTS:               XOR cells:       91
+ABC RESULTS:               MUX cells:      289
+ABC RESULTS:                OR cells:      256
+ABC RESULTS:            ANDNOT cells:      258
+ABC RESULTS:        internal signals:     1026
+ABC RESULTS:           input signals:       67
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+39.2. Extracting gate netlist of module `\InstructionDecoder' to `<abc-temp-dir>/input.blif'..
+Extracted 59 gates and 92 wires to a netlist network with 32 inputs and 36 outputs.
+
+39.2.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.2.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:                OR cells:        1
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:              XNOR cells:        1
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:            ANDNOT cells:       34
+ABC RESULTS:        internal signals:       24
+ABC RESULTS:           input signals:       32
+ABC RESULTS:          output signals:       36
+Removing temp directory.
+
+39.3. Extracting gate netlist of module `\InstructionMemory' to `<abc-temp-dir>/input.blif'..
+Extracted 21 gates and 26 wires to a netlist network with 3 inputs and 14 outputs.
+
+39.3.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.3.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        2
+ABC RESULTS:               NOR cells:        1
+ABC RESULTS:               AND cells:        1
+ABC RESULTS:               XOR cells:        1
+ABC RESULTS:               MUX cells:        7
+ABC RESULTS:            ANDNOT cells:        4
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:             ORNOT cells:        1
+ABC RESULTS:                OR cells:        2
+ABC RESULTS:        internal signals:        9
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:       14
+Removing temp directory.
+
+39.4. Extracting gate netlist of module `\ProgramCounter' to `<abc-temp-dir>/input.blif'..
+Extracted 9 gates and 14 wires to a netlist network with 5 inputs and 5 outputs.
+
+39.4.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.4.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        1
+ABC RESULTS:               AND cells:        2
+ABC RESULTS:              NAND cells:        1
+ABC RESULTS:            ANDNOT cells:        1
+ABC RESULTS:               XOR cells:        4
+ABC RESULTS:        internal signals:        4
+ABC RESULTS:           input signals:        5
+ABC RESULTS:          output signals:        5
+Removing temp directory.
+
+39.5. Extracting gate netlist of module `\RegisterFile' to `<abc-temp-dir>/input.blif'..
+Extracted 2069 gates and 3109 wires to a netlist network with 1040 inputs and 96 outputs.
+
+39.5.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.5.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:     1984
+ABC RESULTS:               NOT cells:        9
+ABC RESULTS:             ORNOT cells:        4
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:                OR cells:       42
+ABC RESULTS:            ANDNOT cells:       32
+ABC RESULTS:        internal signals:     1973
+ABC RESULTS:           input signals:     1040
+ABC RESULTS:          output signals:       96
+Removing temp directory.
+
+39.6. Extracting gate netlist of module `\TopModule' to `<abc-temp-dir>/input.blif'..
+Extracted 32 gates and 97 wires to a netlist network with 65 inputs and 32 outputs.
+
+39.6.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+39.6.2. Re-integrating ABC results.
+ABC RESULTS:               MUX cells:       32
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:       65
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+40. Executing OPT pass (performing simple optimizations).
+
+40.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+<suppressed ~129 debug messages>
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+<suppressed ~960 debug messages>
+Optimizing module TopModule.
+
+40.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+40.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+40.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 10 unused cells and 1775 unused wires.
+<suppressed ~16 debug messages>
+
+40.5. Finished fast OPT passes.
+
+41. Executing HIERARCHY pass (managing design hierarchy).
+
+41.1. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+Used module:     \RegisterFile
+
+41.2. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \ALU3
+Used module:     \InstructionDecoder
+Used module:     \InstructionMemory
+Used module:     \ProgramCounter
+Used module:     \RegisterFile
+Removed 0 unused modules.
+
+42. Printing statistics.
+
+=== ALU3 ===
+
+   Number of wires:               1005
+   Number of wire bits:           1100
+   Number of public wires:           4
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1033
+     $_ANDNOT_                     258
+     $_AND_                         11
+     $_MUX_                        289
+     $_NAND_                        28
+     $_NOR_                         12
+     $_NOT_                         62
+     $_ORNOT_                       23
+     $_OR_                         256
+     $_XNOR_                         3
+     $_XOR_                         91
+
+=== InstructionDecoder ===
+
+   Number of wires:                 11
+   Number of wire bits:             87
+   Number of public wires:           8
+   Number of public wire bits:      84
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_ANDNOT_                      34
+     $_AND_                          1
+     $_NAND_                         1
+     $_NOR_                          1
+     $_OR_                           1
+     $_XNOR_                         1
+
+=== InstructionMemory ===
+
+   Number of wires:                  9
+   Number of wire bits:             44
+   Number of public wires:           2
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $_ANDNOT_                       4
+     $_AND_                          1
+     $_MUX_                          7
+     $_NAND_                         2
+     $_NOR_                          1
+     $_NOT_                          2
+     $_ORNOT_                        1
+     $_OR_                           2
+     $_XOR_                          1
+
+=== ProgramCounter ===
+
+   Number of wires:                 10
+   Number of wire bits:             22
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     $_ANDNOT_                       1
+     $_AND_                          2
+     $_DFFE_PP0P_                    5
+     $_NAND_                         1
+     $_NOT_                          1
+     $_XOR_                          4
+
+=== RegisterFile ===
+
+   Number of wires:               2041
+   Number of wire bits:           3138
+   Number of public wires:          40
+   Number of public wire bits:    1137
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3089
+     $_ANDNOT_                      32
+     $_DFFE_PP_                   1024
+     $_MUX_                       1984
+     $_NAND_                         2
+     $_NOT_                          1
+     $_ORNOT_                        4
+     $_OR_                          42
+
+=== TopModule ===
+
+   Number of wires:                 17
+   Number of wire bits:            252
+   Number of public wires:          17
+   Number of public wire bits:     252
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 37
+     $_MUX_                         32
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+=== design hierarchy ===
+
+   TopModule                         1
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+   Number of wires:               3093
+   Number of wire bits:           4643
+   Number of public wires:          75
+   Number of public wire bits:    1617
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4228
+     $_ANDNOT_                     329
+     $_AND_                         15
+     $_DFFE_PP0P_                    5
+     $_DFFE_PP_                   1024
+     $_MUX_                       2312
+     $_NAND_                        34
+     $_NOR_                         14
+     $_NOT_                         66
+     $_ORNOT_                       28
+     $_OR_                         301
+     $_XNOR_                         4
+     $_XOR_                         96
+
+43. Executing CHECK pass (checking for obvious problems).
+Checking module ALU3...
+Checking module InstructionDecoder...
+Checking module InstructionMemory...
+Checking module ProgramCounter...
+Checking module RegisterFile...
+Checking module TopModule...
+Found and reported 0 problems.
+
+44. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/post_techmap.dot'.
+Dumping module ALU3 to page 1.
+Dumping module InstructionDecoder to page 2.
+Dumping module InstructionMemory to page 3.
+Dumping module ProgramCounter to page 4.
+Dumping module RegisterFile to page 5.
+Dumping module TopModule to page 6.
+
+45. Executing SHARE pass (SAT-based resource sharing).
+
+46. Executing OPT pass (performing simple optimizations).
+
+46.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+46.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+46.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ALU3..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \InstructionDecoder..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \InstructionMemory..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \ProgramCounter..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \RegisterFile..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+46.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ALU3.
+  Optimizing cells in module \InstructionDecoder.
+  Optimizing cells in module \InstructionMemory.
+  Optimizing cells in module \ProgramCounter.
+  Optimizing cells in module \RegisterFile.
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+46.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ALU3'.
+Finding identical cells in module `\InstructionDecoder'.
+Finding identical cells in module `\InstructionMemory'.
+Finding identical cells in module `\ProgramCounter'.
+Finding identical cells in module `\RegisterFile'.
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+46.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+46.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+
+46.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ALU3.
+Optimizing module InstructionDecoder.
+Optimizing module InstructionMemory.
+Optimizing module ProgramCounter.
+Optimizing module RegisterFile.
+Optimizing module TopModule.
+
+46.9. Finished OPT passes. (There is nothing left to do.)
+
+47. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+48. Printing statistics.
+
+=== ALU3 ===
+
+   Number of wires:               1005
+   Number of wire bits:           1100
+   Number of public wires:           4
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1033
+     $_ANDNOT_                     258
+     $_AND_                         11
+     $_MUX_                        289
+     $_NAND_                        28
+     $_NOR_                         12
+     $_NOT_                         62
+     $_ORNOT_                       23
+     $_OR_                         256
+     $_XNOR_                         3
+     $_XOR_                         91
+
+=== InstructionDecoder ===
+
+   Number of wires:                 11
+   Number of wire bits:             87
+   Number of public wires:           8
+   Number of public wire bits:      84
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_ANDNOT_                      34
+     $_AND_                          1
+     $_NAND_                         1
+     $_NOR_                          1
+     $_OR_                           1
+     $_XNOR_                         1
+
+=== InstructionMemory ===
+
+   Number of wires:                  9
+   Number of wire bits:             44
+   Number of public wires:           2
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $_ANDNOT_                       4
+     $_AND_                          1
+     $_MUX_                          7
+     $_NAND_                         2
+     $_NOR_                          1
+     $_NOT_                          2
+     $_ORNOT_                        1
+     $_OR_                           2
+     $_XOR_                          1
+
+=== ProgramCounter ===
+
+   Number of wires:                 10
+   Number of wire bits:             22
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 14
+     $_ANDNOT_                       1
+     $_AND_                          2
+     $_DFFE_PP0P_                    5
+     $_NAND_                         1
+     $_NOT_                          1
+     $_XOR_                          4
+
+=== RegisterFile ===
+
+   Number of wires:               2041
+   Number of wire bits:           3138
+   Number of public wires:          40
+   Number of public wire bits:    1137
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               3089
+     $_ANDNOT_                      32
+     $_DFFE_PP_                   1024
+     $_MUX_                       1984
+     $_NAND_                         2
+     $_NOT_                          1
+     $_ORNOT_                        4
+     $_OR_                          42
+
+=== TopModule ===
+
+   Number of wires:                 16
+   Number of wire bits:            220
+   Number of public wires:          16
+   Number of public wire bits:     220
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 37
+     $_MUX_                         32
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+=== design hierarchy ===
+
+   TopModule                         1
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+   Number of wires:               3092
+   Number of wire bits:           4611
+   Number of public wires:          74
+   Number of public wire bits:    1585
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4228
+     $_ANDNOT_                     329
+     $_AND_                         15
+     $_DFFE_PP0P_                    5
+     $_DFFE_PP_                   1024
+     $_MUX_                       2312
+     $_NAND_                        34
+     $_NOR_                         14
+     $_NOT_                         66
+     $_ORNOT_                       28
+     $_OR_                         301
+     $_XNOR_                         4
+     $_XOR_                         96
+
+mapping tbuf
+
+49. Executing TECHMAP pass (map to technology primitives).
+
+49.1. Executing Verilog-2005 frontend: /home/beeri/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/beeri/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+49.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+50. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+51. Executing TECHMAP pass (map to technology primitives).
+
+51.1. Executing Verilog-2005 frontend: /home/beeri/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/beeri/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+51.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+52. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+53. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+53.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\ALU3':
+Mapping DFF cells in module `\InstructionDecoder':
+Mapping DFF cells in module `\InstructionMemory':
+Mapping DFF cells in module `\ProgramCounter':
+  mapped 5 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+Mapping DFF cells in module `\RegisterFile':
+  mapped 1024 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+Mapping DFF cells in module `\TopModule':
+
+54. Printing statistics.
+
+=== ALU3 ===
+
+   Number of wires:               1005
+   Number of wire bits:           1100
+   Number of public wires:           4
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1033
+     $_ANDNOT_                     258
+     $_AND_                         11
+     $_MUX_                        289
+     $_NAND_                        28
+     $_NOR_                         12
+     $_NOT_                         62
+     $_ORNOT_                       23
+     $_OR_                         256
+     $_XNOR_                         3
+     $_XOR_                         91
+
+=== InstructionDecoder ===
+
+   Number of wires:                 11
+   Number of wire bits:             87
+   Number of public wires:           8
+   Number of public wire bits:      84
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_ANDNOT_                      34
+     $_AND_                          1
+     $_NAND_                         1
+     $_NOR_                          1
+     $_OR_                           1
+     $_XNOR_                         1
+
+=== InstructionMemory ===
+
+   Number of wires:                  9
+   Number of wire bits:             44
+   Number of public wires:           2
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $_ANDNOT_                       4
+     $_AND_                          1
+     $_MUX_                          7
+     $_NAND_                         2
+     $_NOR_                          1
+     $_NOT_                          2
+     $_ORNOT_                        1
+     $_OR_                           2
+     $_XOR_                          1
+
+=== ProgramCounter ===
+
+   Number of wires:                 20
+   Number of wire bits:             32
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 24
+     $_ANDNOT_                       1
+     $_AND_                          2
+     $_MUX_                          5
+     $_NAND_                         1
+     $_NOT_                          6
+     $_XOR_                          4
+     sky130_fd_sc_hd__dfrtp_2        5
+
+=== RegisterFile ===
+
+   Number of wires:               3065
+   Number of wire bits:           4162
+   Number of public wires:          40
+   Number of public wire bits:    1137
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4113
+     $_ANDNOT_                      32
+     $_MUX_                       3008
+     $_NAND_                         2
+     $_NOT_                          1
+     $_ORNOT_                        4
+     $_OR_                          42
+     sky130_fd_sc_hd__dfxtp_2     1024
+
+=== TopModule ===
+
+   Number of wires:                 16
+   Number of wire bits:            220
+   Number of public wires:          16
+   Number of public wire bits:     220
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 37
+     $_MUX_                         32
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+=== design hierarchy ===
+
+   TopModule                         1
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+   Number of wires:               4126
+   Number of wire bits:           5645
+   Number of public wires:          74
+   Number of public wire bits:    1585
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5262
+     $_ANDNOT_                     329
+     $_AND_                         15
+     $_MUX_                       3341
+     $_NAND_                        34
+     $_NOR_                         14
+     $_NOT_                         71
+     $_ORNOT_                       28
+     $_OR_                         301
+     $_XNOR_                         4
+     $_XOR_                         96
+     sky130_fd_sc_hd__dfrtp_2        5
+     sky130_fd_sc_hd__dfxtp_2     1024
+
+[INFO]: USING STRATEGY AREA 0
+
+55. Executing ABC pass (technology mapping using ABC).
+
+55.1. Extracting gate netlist of module `\ALU3' to `/tmp/yosys-abc-JbUSC2/input.blif'..
+Extracted 1033 gates and 1100 wires to a netlist network with 67 inputs and 32 outputs.
+
+55.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-JbUSC2/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-JbUSC2/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-JbUSC2/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (5022.32 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =    753 ( 10.5 %)   Cap =  9.2 ff (  3.4 %)   Area =     6922.89 ( 87.0 %)   Delay =  5181.61 ps  (  3.2 %)               
+ABC: Path  0 --       8 : 0   10 pi                        A =   0.00  Df = 100.1  -54.5 ps  S = 147.2 ps  Cin =  0.0 ff  Cout =  31.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     172 : 4    1 sky130_fd_sc_hd__or4_2    A =   8.76  Df = 676.2 -439.1 ps  S =  94.4 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 310.4 ff  G =  140  
+ABC: Path  2 --     173 : 1   10 sky130_fd_sc_hd__buf_1    A =   3.75  Df = 872.1 -381.1 ps  S = 305.0 ps  Cin =  2.1 ff  Cout =  25.5 ff  Cmax = 130.0 ff  G = 1146  
+ABC: Path  3 --     522 : 3    7 sky130_fd_sc_hd__or3_2    A =   7.51  Df =1412.2 -686.6 ps  S = 122.0 ps  Cin =  1.5 ff  Cout =  18.6 ff  Cmax = 310.4 ff  G = 1149  
+ABC: Path  4 --     577 : 5    1 sky130_fd_sc_hd__o41a_2   A =  12.51  Df =1828.8 -952.4 ps  S =  80.0 ps  Cin =  2.4 ff  Cout =   8.4 ff  Cmax = 305.8 ff  G =  350  
+ABC: Path  5 --     578 : 2    3 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =2057.7-1016.5 ps  S = 247.7 ps  Cin =  8.5 ff  Cout =  15.6 ff  Cmax = 121.8 ff  G =  175  
+ABC: Path  6 --     579 : 2    3 sky130_fd_sc_hd__xor2_2   A =  16.27  Df =2313.9-1098.4 ps  S = 190.1 ps  Cin =  8.6 ff  Cout =  11.7 ff  Cmax = 130.0 ff  G =  131  
+ABC: Path  7 --     599 : 4    2 sky130_fd_sc_hd__and4b_2  A =  11.26  Df =2556.8-1100.9 ps  S =  53.1 ps  Cin =  1.6 ff  Cout =   3.0 ff  Cmax = 297.6 ff  G =  183  
+ABC: Path  8 --     600 : 4    1 sky130_fd_sc_hd__or4b_2   A =  10.01  Df =3125.8-1395.8 ps  S =  95.3 ps  Cin =  1.5 ff  Cout =   2.5 ff  Cmax = 265.5 ff  G =  158  
+ABC: Path  9 --     602 : 4    3 sky130_fd_sc_hd__o31a_2   A =  10.01  Df =3443.6-1463.9 ps  S =  68.2 ps  Cin =  2.3 ff  Cout =   9.2 ff  Cmax = 285.7 ff  G =  372  
+ABC: Path 10 --     729 : 4    3 sky130_fd_sc_hd__a211o_2  A =  10.01  Df =3799.8 -344.9 ps  S =  65.6 ps  Cin =  2.4 ff  Cout =   9.5 ff  Cmax = 325.0 ff  G =  389  
+ABC: Path 11 --     794 : 5    2 sky130_fd_sc_hd__a2111o_2 A =  12.51  Df =4234.4 -484.0 ps  S =  75.4 ps  Cin =  2.4 ff  Cout =   7.0 ff  Cmax = 324.1 ff  G =  281  
+ABC: Path 12 --     819 : 3    2 sky130_fd_sc_hd__a21o_2   A =   8.76  Df =4427.5 -567.8 ps  S =  34.5 ps  Cin =  2.4 ff  Cout =   3.2 ff  Cmax = 309.5 ff  G =  129  
+ABC: Path 13 --     828 : 3    2 sky130_fd_sc_hd__and3_2   A =   7.51  Df =4652.7 -588.6 ps  S =  83.3 ps  Cin =  1.5 ff  Cout =  11.5 ff  Cmax = 309.5 ff  G =  741  
+ABC: Path 14 --     841 : 3    1 sky130_fd_sc_hd__o21a_2   A =   8.76  Df =4879.6 -658.6 ps  S =  62.3 ps  Cin =  2.4 ff  Cout =   9.0 ff  Cmax = 294.8 ff  G =  364  
+ABC: Path 15 --     845 : 2    1 sky130_fd_sc_hd__xnor2_2  A =  16.27  Df =5030.8 -673.9 ps  S = 122.6 ps  Cin =  8.5 ff  Cout =   4.7 ff  Cmax = 121.8 ff  G =   52  
+ABC: Path 16 --     852 : 3    1 sky130_fd_sc_hd__o21ai_2  A =   8.76  Df =5181.6 -493.7 ps  S = 399.5 ps  Cin =  4.5 ff  Cout =  33.4 ff  Cmax = 139.2 ff  G =  735  
+ABC: Start-point = pi7 (\B [3]).  End-point = po31 (\result [31]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   67/   32  lat =    0  nd =   753  edge =   2103  area =6923.74  delay =17.00  lev = 17
+ABC: + write_blif /tmp/yosys-abc-JbUSC2/output.blif 
+
+55.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nand4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       49
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o41a_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a2bb2o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:       78
+ABC RESULTS:   sky130_fd_sc_hd__a2111o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       37
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:       30
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:       34
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       67
+ABC RESULTS:   sky130_fd_sc_hd__o311a_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       35
+ABC RESULTS:   sky130_fd_sc_hd__a211o_2 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:       19
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:       43
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:       62
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__o211a_2 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       34
+ABC RESULTS:        internal signals:     1001
+ABC RESULTS:           input signals:       67
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+55.2. Extracting gate netlist of module `\InstructionDecoder' to `/tmp/yosys-abc-qJCeXC/input.blif'..
+Extracted 39 gates and 70 wires to a netlist network with 31 inputs and 36 outputs.
+
+55.2.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-qJCeXC/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-qJCeXC/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-qJCeXC/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (743.67 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     76 ( 52.6 %)   Cap = 13.4 ff ( 13.0 %)   Area =      417.90 ( 47.4 %)   Delay =  1139.86 ps  ( 26.3 %)               
+ABC: Path  0 --       1 : 0    3 pi                      A =   0.00  Df =  20.9  -12.1 ps  S =  34.6 ps  Cin =  0.0 ff  Cout =   6.0 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      72 : 2    7 sky130_fd_sc_hd__or2_2  A =   6.26  Df = 322.1 -175.5 ps  S =  79.2 ps  Cin =  1.5 ff  Cout =  11.7 ff  Cmax = 299.4 ff  G =  771  
+ABC: Path  2 --      73 : 1   10 sky130_fd_sc_hd__buf_1  A =   3.75  Df = 608.5  -20.5 ps  S = 557.0 ps  Cin =  2.1 ff  Cout =  47.3 ff  Cmax = 130.0 ff  G = 2220  
+ABC: Path  3 --     124 : 2    1 sky130_fd_sc_hd__and2_2 A =   7.51  Df = 890.3  -73.4 ps  S =  43.5 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 303.0 ff  G =  143  
+ABC: Path  4 --     125 : 1    1 sky130_fd_sc_hd__buf_1  A =   3.75  Df =1139.9  -35.4 ps  S = 396.8 ps  Cin =  2.1 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G = 1590  
+ABC: Start-point = pi0 (\instruction [31]).  End-point = po26 (\rs1 [0]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   31/   36  lat =    0  nd =    76  edge =    136  area =417.86  delay = 4.00  lev = 4
+ABC: + write_blif /tmp/yosys-abc-qJCeXC/output.blif 
+
+55.2.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:       24
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       39
+ABC RESULTS:        internal signals:        3
+ABC RESULTS:           input signals:       31
+ABC RESULTS:          output signals:       36
+Removing temp directory.
+
+55.3. Extracting gate netlist of module `\InstructionMemory' to `/tmp/yosys-abc-WkTWvB/input.blif'..
+Extracted 21 gates and 24 wires to a netlist network with 3 inputs and 14 outputs.
+
+55.3.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-WkTWvB/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-WkTWvB/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-WkTWvB/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.04 sec
+ABC: Memory =    9.54 MB. Time =     0.04 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (856.29 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     20 ( 35.0 %)   Cap = 25.0 ff (  7.5 %)   Area =      132.63 ( 65.0 %)   Delay =  1090.65 ps  ( 20.0 %)               
+ABC: Path  0 --       2 : 0    8 pi                       A =   0.00  Df =  77.7  -42.8 ps  S = 115.0 ps  Cin =  0.0 ff  Cout =  23.9 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      18 : 2    1 sky130_fd_sc_hd__and2b_2 A =   8.76  Df = 296.6  -65.2 ps  S =  33.8 ps  Cin =  1.6 ff  Cout =   2.2 ff  Cmax = 310.4 ff  G =  132  
+ABC: Path  2 --      19 : 1    2 sky130_fd_sc_hd__buf_1   A =   3.75  Df = 562.0  -45.9 ps  S = 413.7 ps  Cin =  2.1 ff  Cout =  35.0 ff  Cmax = 130.0 ff  G = 1660  
+ABC: Path  3 --      36 : 2    1 sky130_fd_sc_hd__and2_2  A =   7.51  Df = 769.0   -0.8 ps  S =  40.5 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 303.0 ff  G =  143  
+ABC: Path  4 --      37 : 1    1 sky130_fd_sc_hd__buf_1   A =   3.75  Df =1090.7 -108.3 ps  S = 396.6 ps  Cin =  2.1 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G = 1590  
+ABC: Start-point = pi1 (\address [2]).  End-point = po11 (\instruction [26]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =    3/   14  lat =    0  nd =    20  edge =     39  area =132.63  delay = 4.00  lev = 4
+ABC: + write_blif /tmp/yosys-abc-WkTWvB/output.blif 
+
+55.3.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:        5
+ABC RESULTS:        internal signals:        7
+ABC RESULTS:           input signals:        3
+ABC RESULTS:          output signals:       14
+Removing temp directory.
+
+55.4. Extracting gate netlist of module `\ProgramCounter' to `/tmp/yosys-abc-8wBx4q/input.blif'..
+Extracted 19 gates and 26 wires to a netlist network with 7 inputs and 10 outputs.
+
+55.4.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-8wBx4q/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-8wBx4q/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-8wBx4q/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (850.30 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     16 ( 37.5 %)   Cap = 19.4 ff (  5.5 %)   Area =      117.61 ( 62.5 %)   Delay =   914.84 ps  ( 25.0 %)               
+ABC: Path  0 --       6 : 0    4 pi                      A =   0.00  Df =  55.3  -30.5 ps  S =  82.8 ps  Cin =  0.0 ff  Cout =  16.7 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      18 : 4    3 sky130_fd_sc_hd__and4_2 A =  10.01  Df = 300.5  -39.5 ps  S =  75.3 ps  Cin =  1.5 ff  Cout =   7.6 ff  Cmax = 300.3 ff  G =  474  
+ABC: Path  2 --      21 : 2    1 sky130_fd_sc_hd__or2_2  A =   6.26  Df = 520.4 -120.9 ps  S =  48.8 ps  Cin =  1.5 ff  Cout =   1.5 ff  Cmax = 299.4 ff  G =  101  
+ABC: Path  3 --      22 : 2    1 sky130_fd_sc_hd__and2_2 A =   7.51  Df = 700.7 -183.0 ps  S =  34.8 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 303.0 ff  G =  143  
+ABC: Path  4 --      23 : 1    1 sky130_fd_sc_hd__buf_1  A =   3.75  Df = 914.8  -77.8 ps  S = 396.2 ps  Cin =  2.1 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G = 1590  
+ABC: Start-point = pi5 (\pc_out [0]).  End-point = po1 ($auto$rtlil.cc:2684:MuxGate$9837).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =    7/   10  lat =    0  nd =    16  edge =     31  area =117.62  delay = 4.00  lev = 4
+ABC: + write_blif /tmp/yosys-abc-8wBx4q/output.blif 
+
+55.4.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        5
+ABC RESULTS:        internal signals:        9
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:       10
+Removing temp directory.
+
+55.5. Extracting gate netlist of module `\RegisterFile' to `/tmp/yosys-abc-a3O2uI/input.blif'..
+Extracted 3089 gates and 4161 wires to a netlist network with 1072 inputs and 1088 outputs.
+
+55.5.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-a3O2uI/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-a3O2uI/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-a3O2uI/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.04 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (1663.34 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =   3467 ( 40.1 %)   Cap = 12.8 ff ( 17.5 %)   Area =    33877.49 ( 44.8 %)   Delay =  2011.37 ps  ( 11.6 %)               
+ABC: Path  0 --    1030 : 0    4 pi                      A =   0.00  Df =  30.0  -16.9 ps  S =  47.2 ps  Cin =  0.0 ff  Cout =   8.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --    2776 : 1   10 sky130_fd_sc_hd__buf_1  A =   3.75  Df = 432.7 -188.8 ps  S = 510.9 ps  Cin =  2.1 ff  Cout =  43.4 ff  Cmax = 130.0 ff  G = 1956  
+ABC: Path  2 --    3151 : 1   10 sky130_fd_sc_hd__buf_1  A =   3.75  Df =1006.8 -400.0 ps  S = 670.8 ps  Cin =  2.1 ff  Cout =  57.7 ff  Cmax = 130.0 ff  G = 2593  
+ABC: Path  3 --    3153 : 6    1 sky130_fd_sc_hd__mux4_2 A =  22.52  Df =1549.8 -412.1 ps  S =  75.7 ps  Cin =  2.6 ff  Cout =   2.0 ff  Cmax = 301.2 ff  G =   71  
+ABC: Path  4 --    3156 : 3    1 sky130_fd_sc_hd__mux2_2 A =  11.26  Df =1682.9 -283.6 ps  S =  46.3 ps  Cin =  2.3 ff  Cout =   2.4 ff  Cmax = 297.6 ff  G =  102  
+ABC: Path  5 --    3158 : 3    1 sky130_fd_sc_hd__a21o_2 A =   8.76  Df =1789.8 -190.5 ps  S =  33.2 ps  Cin =  2.4 ff  Cout =   2.5 ff  Cmax = 309.5 ff  G =   99  
+ABC: Path  6 --    3159 : 4    1 sky130_fd_sc_hd__o22a_2 A =  10.01  Df =2011.4 -149.5 ps  S = 177.1 ps  Cin =  2.4 ff  Cout =  33.4 ff  Cmax = 304.9 ff  G = 1417  
+ABC: Start-point = pi1029 (\read_reg1 [0]).  End-point = po52 (\data1 [20]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o = 1072/ 1088  lat =    0  nd =  3467  edge =   9150  area =33870.98  delay = 7.00  lev = 7
+ABC: + write_blif /tmp/yosys-abc-a3O2uI/output.blif 
+
+55.5.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__and2b_2 cells:       64
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:      522
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:       64
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:       64
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__and3b_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:       17
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:     1314
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:     1388
+ABC RESULTS:        internal signals:     2001
+ABC RESULTS:           input signals:     1072
+ABC RESULTS:          output signals:     1088
+Removing temp directory.
+
+55.6. Extracting gate netlist of module `\TopModule' to `/tmp/yosys-abc-5b58pv/input.blif'..
+Extracted 32 gates and 97 wires to a netlist network with 65 inputs and 32 outputs.
+
+55.6.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-5b58pv/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-5b58pv/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-5b58pv/input.blif 
+ABC: + read_lib -w /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.03 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.05 sec
+ABC: Memory =    9.54 MB. Time =     0.05 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 10000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 10000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 10000 
+ABC: Current delay (633.04 ps) does not exceed the target delay (10000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 10000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =     67 ( 52.2 %)   Cap = 10.3 ff ( 13.1 %)   Area =      491.72 ( 47.8 %)   Delay =  1033.38 ps  ( 94.0 %)               
+ABC: Path  0 --       3 : 0    5 pi                      A =   0.00  Df =  44.5  -24.8 ps  S =  67.3 ps  Cin =  0.0 ff  Cout =  13.3 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --      98 : 1   10 sky130_fd_sc_hd__buf_1  A =   3.75  Df = 375.8 -155.2 ps  S = 398.3 ps  Cin =  2.1 ff  Cout =  33.5 ff  Cmax = 130.0 ff  G = 1528  
+ABC: Path  2 --      99 : 3    1 sky130_fd_sc_hd__mux2_2 A =  11.26  Df = 712.5 -144.8 ps  S =  45.7 ps  Cin =  2.3 ff  Cout =   2.2 ff  Cmax = 297.6 ff  G =   92  
+ABC: Path  3 --     100 : 1    1 sky130_fd_sc_hd__buf_1  A =   3.75  Df =1033.4 -246.8 ps  S = 396.5 ps  Cin =  2.1 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G = 1590  
+ABC: Start-point = pi2 (\isImmediate).  End-point = po0 (\alu_in2 [0]).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =   65/   32  lat =    0  nd =    67  edge =    131  area =491.57  delay = 3.00  lev = 3
+ABC: + write_blif /tmp/yosys-abc-5b58pv/output.blif 
+
+55.6.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:       35
+ABC RESULTS:        internal signals:        0
+ABC RESULTS:           input signals:       65
+ABC RESULTS:          output signals:       32
+Removing temp directory.
+
+56. Executing SETUNDEF pass (replace undef values with defined constants).
+
+57. Executing HILOMAP pass (mapping to constant drivers).
+
+58. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+59. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ALU3..
+Finding unused cells or wires in module \InstructionDecoder..
+Finding unused cells or wires in module \InstructionMemory..
+Finding unused cells or wires in module \ProgramCounter..
+Finding unused cells or wires in module \RegisterFile..
+Finding unused cells or wires in module \TopModule..
+Removed 0 unused cells and 5495 unused wires.
+<suppressed ~6 debug messages>
+
+60. Executing INSBUF pass (insert buffer cells for connected wires).
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16321: \instruction [29] -> \ALUop [0]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16322: \instruction [30] -> \ALUop [1]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16323: \instruction [31] -> \ALUop [2]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16324: \imm [31] -> \imm [18]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16325: \imm [31] -> \imm [19]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16326: \imm [31] -> \imm [20]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16327: \imm [31] -> \imm [21]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16328: \imm [31] -> \imm [22]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16329: \imm [31] -> \imm [23]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16330: \imm [31] -> \imm [24]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16331: \imm [31] -> \imm [25]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16332: \imm [31] -> \imm [26]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16333: \imm [31] -> \imm [27]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16334: \imm [31] -> \imm [28]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16335: \imm [31] -> \imm [29]
+Add InstructionDecoder/$auto$insbuf.cc:97:execute$16336: \imm [31] -> \imm [30]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16337: \instruction [2] -> \instruction [0]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16338: \instruction [13] -> \instruction [11]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16339: \instruction [17] -> \instruction [12]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16340: \instruction [17] -> \instruction [14]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16341: \instruction [20] -> \instruction [16]
+Add InstructionMemory/$auto$insbuf.cc:97:execute$16342: \instruction [25] -> \instruction [19]
+
+61. Executing CHECK pass (checking for obvious problems).
+Checking module ALU3...
+Checking module InstructionDecoder...
+Checking module InstructionMemory...
+Checking module ProgramCounter...
+Checking module RegisterFile...
+Checking module TopModule...
+Found and reported 0 problems.
+
+62. Printing statistics.
+
+=== ALU3 ===
+
+   Number of wires:                725
+   Number of wire bits:            820
+   Number of public wires:           4
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                753
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       21
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2      11
+     sky130_fd_sc_hd__a21o_2        35
+     sky130_fd_sc_hd__a21oi_2       34
+     sky130_fd_sc_hd__a221o_2        9
+     sky130_fd_sc_hd__a22o_2         8
+     sky130_fd_sc_hd__a2bb2o_2       4
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        15
+     sky130_fd_sc_hd__a31oi_2        5
+     sky130_fd_sc_hd__a32o_2         4
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2        13
+     sky130_fd_sc_hd__and2b_2        3
+     sky130_fd_sc_hd__and3_2         8
+     sky130_fd_sc_hd__and3b_2        4
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1         49
+     sky130_fd_sc_hd__inv_2         30
+     sky130_fd_sc_hd__mux2_2        78
+     sky130_fd_sc_hd__mux4_2        19
+     sky130_fd_sc_hd__nand2_2       67
+     sky130_fd_sc_hd__nand3_2        5
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        37
+     sky130_fd_sc_hd__o211a_2        8
+     sky130_fd_sc_hd__o211ai_2       3
+     sky130_fd_sc_hd__o21a_2        19
+     sky130_fd_sc_hd__o21ai_2       34
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__o221a_2       11
+     sky130_fd_sc_hd__o221ai_2       2
+     sky130_fd_sc_hd__o22a_2         8
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o311a_2        4
+     sky130_fd_sc_hd__o31a_2        15
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         5
+     sky130_fd_sc_hd__o41a_2         3
+     sky130_fd_sc_hd__or2_2         62
+     sky130_fd_sc_hd__or2b_2         8
+     sky130_fd_sc_hd__or3_2         19
+     sky130_fd_sc_hd__or3b_2         2
+     sky130_fd_sc_hd__or4_2         11
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2       43
+     sky130_fd_sc_hd__xor2_2        13
+
+   Chip area for module '\ALU3': 6922.889600
+
+=== InstructionDecoder ===
+
+   Number of wires:                 48
+   Number of wire bits:            124
+   Number of public wires:           8
+   Number of public wire bits:      84
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 92
+     sky130_fd_sc_hd__and2_2        10
+     sky130_fd_sc_hd__and3_2        24
+     sky130_fd_sc_hd__buf_1         39
+     sky130_fd_sc_hd__buf_2         16
+     sky130_fd_sc_hd__inv_2          1
+     sky130_fd_sc_hd__nand2_2        1
+     sky130_fd_sc_hd__or2_2          1
+
+   Chip area for module '\InstructionDecoder': 497.977600
+
+=== InstructionMemory ===
+
+   Number of wires:                  8
+   Number of wire bits:             43
+   Number of public wires:           2
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 38
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__and2b_2        1
+     sky130_fd_sc_hd__buf_1          5
+     sky130_fd_sc_hd__buf_2          6
+     sky130_fd_sc_hd__conb_1        12
+     sky130_fd_sc_hd__inv_2          2
+     sky130_fd_sc_hd__nand2_2        2
+     sky130_fd_sc_hd__nand3b_2       1
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__o21a_2         2
+     sky130_fd_sc_hd__o21ai_2        1
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__or2b_2         1
+     sky130_fd_sc_hd__or3b_2         1
+
+   Chip area for module '\InstructionMemory': 207.699200
+
+=== ProgramCounter ===
+
+   Number of wires:                 20
+   Number of wire bits:             24
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     sky130_fd_sc_hd__a21oi_2        1
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__and3_2         1
+     sky130_fd_sc_hd__and4_2         1
+     sky130_fd_sc_hd__buf_1          1
+     sky130_fd_sc_hd__dfrtp_2        5
+     sky130_fd_sc_hd__inv_2          5
+     sky130_fd_sc_hd__nand2_2        1
+     sky130_fd_sc_hd__nor2_2         1
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__xnor2_2        1
+     sky130_fd_sc_hd__xor2_2         1
+
+   Chip area for module '\ProgramCounter': 248.988800
+
+=== RegisterFile ===
+
+   Number of wires:               4435
+   Number of wire bits:           4540
+   Number of public wires:        1032
+   Number of public wire bits:    1137
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4491
+     sky130_fd_sc_hd__a21o_2        64
+     sky130_fd_sc_hd__and2_2         3
+     sky130_fd_sc_hd__and2b_2       64
+     sky130_fd_sc_hd__and3_2         2
+     sky130_fd_sc_hd__and3b_2        4
+     sky130_fd_sc_hd__buf_1       1388
+     sky130_fd_sc_hd__dfxtp_2     1024
+     sky130_fd_sc_hd__inv_2          3
+     sky130_fd_sc_hd__mux2_2      1314
+     sky130_fd_sc_hd__mux4_2       522
+     sky130_fd_sc_hd__nand2_2       14
+     sky130_fd_sc_hd__nand3_2        1
+     sky130_fd_sc_hd__nand3b_2       1
+     sky130_fd_sc_hd__nor2_2        17
+     sky130_fd_sc_hd__o22a_2        64
+     sky130_fd_sc_hd__or2_2          1
+     sky130_fd_sc_hd__or3_2          1
+     sky130_fd_sc_hd__or3b_2         4
+
+   Chip area for module '\RegisterFile': 55658.380800
+
+=== TopModule ===
+
+   Number of wires:                224
+   Number of wire bits:            255
+   Number of public wires:         189
+   Number of public wire bits:     220
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 72
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+     sky130_fd_sc_hd__buf_1         35
+     sky130_fd_sc_hd__mux2_2        32
+
+   Area for cell type \ProgramCounter is unknown!
+   Area for cell type \InstructionMemory is unknown!
+   Area for cell type \InstructionDecoder is unknown!
+   Area for cell type \RegisterFile is unknown!
+   Area for cell type \ALU3 is unknown!
+
+   Chip area for module '\TopModule': 491.721600
+
+=== design hierarchy ===
+
+   TopModule                         1
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+   Number of wires:               5460
+   Number of wire bits:           5806
+   Number of public wires:        1239
+   Number of public wire bits:    1585
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5462
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       21
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2      11
+     sky130_fd_sc_hd__a21o_2        99
+     sky130_fd_sc_hd__a21oi_2       35
+     sky130_fd_sc_hd__a221o_2        9
+     sky130_fd_sc_hd__a22o_2         8
+     sky130_fd_sc_hd__a2bb2o_2       4
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        15
+     sky130_fd_sc_hd__a31oi_2        5
+     sky130_fd_sc_hd__a32o_2         4
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2        28
+     sky130_fd_sc_hd__and2b_2       68
+     sky130_fd_sc_hd__and3_2        35
+     sky130_fd_sc_hd__and3b_2        8
+     sky130_fd_sc_hd__and4_2         2
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1       1517
+     sky130_fd_sc_hd__buf_2         22
+     sky130_fd_sc_hd__conb_1        12
+     sky130_fd_sc_hd__dfrtp_2        5
+     sky130_fd_sc_hd__dfxtp_2     1024
+     sky130_fd_sc_hd__inv_2         41
+     sky130_fd_sc_hd__mux2_2      1424
+     sky130_fd_sc_hd__mux4_2       541
+     sky130_fd_sc_hd__nand2_2       85
+     sky130_fd_sc_hd__nand3_2        6
+     sky130_fd_sc_hd__nand3b_2       2
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        56
+     sky130_fd_sc_hd__o211a_2        8
+     sky130_fd_sc_hd__o211ai_2       3
+     sky130_fd_sc_hd__o21a_2        21
+     sky130_fd_sc_hd__o21ai_2       35
+     sky130_fd_sc_hd__o21ba_2        3
+     sky130_fd_sc_hd__o221a_2       11
+     sky130_fd_sc_hd__o221ai_2       2
+     sky130_fd_sc_hd__o22a_2        72
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o311a_2        4
+     sky130_fd_sc_hd__o31a_2        15
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         5
+     sky130_fd_sc_hd__o41a_2         3
+     sky130_fd_sc_hd__or2_2         66
+     sky130_fd_sc_hd__or2b_2         9
+     sky130_fd_sc_hd__or3_2         20
+     sky130_fd_sc_hd__or3b_2         7
+     sky130_fd_sc_hd__or4_2         11
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2       44
+     sky130_fd_sc_hd__xor2_2        14
+
+   Chip area for top module '\TopModule': 64027.657600
+
+63. Executing Verilog backend.
+Dumping module `\ALU3'.
+Dumping module `\InstructionDecoder'.
+Dumping module `\InstructionMemory'.
+Dumping module `\ProgramCounter'.
+Dumping module `\RegisterFile'.
+Dumping module `\TopModule'.
+
+64. Executing JSON backend.
+
+65. Executing Liberty frontend: /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/tmp/synthesis/1-sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib
+Imported 428 cell types from liberty file.
+
+66. Executing Verilog-2005 frontend: /openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/results/synthesis/TopModule.v
+Parsing SystemVerilog input from `/openlane/designs/project6/runs/RUN_2025.06.14_15.59.08/results/synthesis/TopModule.v' to AST representation.
+Generating RTLIL representation for module `\ALU3'.
+Generating RTLIL representation for module `\InstructionDecoder'.
+Generating RTLIL representation for module `\InstructionMemory'.
+Generating RTLIL representation for module `\ProgramCounter'.
+Generating RTLIL representation for module `\RegisterFile'.
+Generating RTLIL representation for module `\TopModule'.
+Successfully finished Verilog frontend.
+
+67. Executing SYNTH pass.
+
+67.1. Executing HIERARCHY pass (managing design hierarchy).
+
+67.1.1. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \RegisterFile
+Used module:     \ProgramCounter
+Used module:     \InstructionMemory
+Used module:     \InstructionDecoder
+Used module:     \ALU3
+
+67.1.2. Analyzing design hierarchy..
+Top module:  \TopModule
+Used module:     \RegisterFile
+Used module:     \ProgramCounter
+Used module:     \InstructionMemory
+Used module:     \InstructionDecoder
+Used module:     \ALU3
+Removed 0 unused modules.
+
+67.2. Executing PROC pass (convert processes to netlists).
+
+67.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+67.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+67.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+67.2.4. Executing PROC_INIT pass (extract init attributes).
+
+67.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+67.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+67.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+67.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+67.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+67.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+67.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+67.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+Optimizing module RegisterFile.
+Optimizing module ProgramCounter.
+Optimizing module InstructionMemory.
+Optimizing module InstructionDecoder.
+Optimizing module ALU3.
+
+67.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module RegisterFile.
+Deleting now unused module ProgramCounter.
+Deleting now unused module InstructionMemory.
+Deleting now unused module InstructionDecoder.
+Deleting now unused module ALU3.
+<suppressed ~5 debug messages>
+
+67.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+Removed 9 unused cells and 7 unused wires.
+<suppressed ~16 debug messages>
+
+67.6. Executing CHECK pass (checking for obvious problems).
+Checking module TopModule...
+Found and reported 0 problems.
+
+67.7. Executing OPT pass (performing simple optimizations).
+
+67.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+67.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+67.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.7.9. Finished OPT passes. (There is nothing left to do.)
+
+67.8. Executing FSM pass (extract and optimize FSM).
+
+67.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+67.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+67.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+67.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+67.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+67.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+67.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+67.9. Executing OPT pass (performing simple optimizations).
+
+67.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+67.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+67.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.9.9. Finished OPT passes. (There is nothing left to do.)
+
+67.10. Executing WREDUCE pass (reducing word size of cells).
+
+67.11. Executing PEEPOPT pass (run peephole optimizers).
+
+67.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module TopModule:
+  created 0 $alu and 0 $macc cells.
+
+67.14. Executing SHARE pass (SAT-based resource sharing).
+
+67.15. Executing OPT pass (performing simple optimizations).
+
+67.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+67.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+67.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.15.9. Finished OPT passes. (There is nothing left to do.)
+
+67.16. Executing MEMORY pass.
+
+67.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+67.16.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+67.16.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+67.16.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+67.16.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+67.16.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.16.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+67.16.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+67.16.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.16.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+67.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.18. Executing OPT pass (performing simple optimizations).
+
+67.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+<suppressed ~2 debug messages>
+
+67.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.18.5. Finished fast OPT passes.
+
+67.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+67.20. Executing OPT pass (performing simple optimizations).
+
+67.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \TopModule..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+67.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \TopModule.
+Performed a total of 0 changes.
+
+67.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.20.6. Executing OPT_SHARE pass.
+
+67.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.20.10. Finished OPT passes. (There is nothing left to do.)
+
+67.21. Executing TECHMAP pass (map to technology primitives).
+
+67.21.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+67.21.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~73 debug messages>
+
+67.22. Executing OPT pass (performing simple optimizations).
+
+67.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.22.5. Finished fast OPT passes.
+
+67.23. Executing ABC pass (technology mapping using ABC).
+
+67.23.1. Extracting gate netlist of module `\TopModule' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+67.24. Executing OPT pass (performing simple optimizations).
+
+67.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module TopModule.
+
+67.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\TopModule'.
+Removed a total of 0 cells.
+
+67.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+67.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+
+67.24.5. Finished fast OPT passes.
+
+67.25. Executing HIERARCHY pass (managing design hierarchy).
+
+67.25.1. Analyzing design hierarchy..
+Top module:  \TopModule
+
+67.25.2. Analyzing design hierarchy..
+Top module:  \TopModule
+Removed 0 unused modules.
+
+67.26. Printing statistics.
+
+=== TopModule ===
+
+   Number of wires:               5453
+   Number of wire bits:           5799
+   Number of public wires:        5453
+   Number of public wire bits:    5799
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5453
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       21
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2      11
+     sky130_fd_sc_hd__a21o_2        99
+     sky130_fd_sc_hd__a21oi_2       35
+     sky130_fd_sc_hd__a221o_2        9
+     sky130_fd_sc_hd__a22o_2         8
+     sky130_fd_sc_hd__a2bb2o_2       4
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        15
+     sky130_fd_sc_hd__a31oi_2        5
+     sky130_fd_sc_hd__a32o_2         4
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2        27
+     sky130_fd_sc_hd__and2b_2       68
+     sky130_fd_sc_hd__and3_2        35
+     sky130_fd_sc_hd__and3b_2        8
+     sky130_fd_sc_hd__and4_2         2
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1       1516
+     sky130_fd_sc_hd__buf_2         22
+     sky130_fd_sc_hd__conb_1        12
+     sky130_fd_sc_hd__dfrtp_2        3
+     sky130_fd_sc_hd__dfxtp_2     1024
+     sky130_fd_sc_hd__inv_2         39
+     sky130_fd_sc_hd__mux2_2      1424
+     sky130_fd_sc_hd__mux4_2       541
+     sky130_fd_sc_hd__nand2_2       84
+     sky130_fd_sc_hd__nand3_2        6
+     sky130_fd_sc_hd__nand3b_2       2
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        56
+     sky130_fd_sc_hd__o211a_2        8
+     sky130_fd_sc_hd__o211ai_2       3
+     sky130_fd_sc_hd__o21a_2        21
+     sky130_fd_sc_hd__o21ai_2       35
+     sky130_fd_sc_hd__o21ba_2        3
+     sky130_fd_sc_hd__o221a_2       11
+     sky130_fd_sc_hd__o221ai_2       2
+     sky130_fd_sc_hd__o22a_2        72
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o311a_2        4
+     sky130_fd_sc_hd__o31a_2        15
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         5
+     sky130_fd_sc_hd__o41a_2         3
+     sky130_fd_sc_hd__or2_2         65
+     sky130_fd_sc_hd__or2b_2         9
+     sky130_fd_sc_hd__or3_2         20
+     sky130_fd_sc_hd__or3b_2         7
+     sky130_fd_sc_hd__or4_2         11
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2       43
+     sky130_fd_sc_hd__xor2_2        14
+
+67.27. Executing CHECK pass (checking for obvious problems).
+Checking module TopModule...
+Found and reported 0 problems.
+[INFO]: USING STRATEGY AREA 0
+
+68. Executing ABC pass (technology mapping using ABC).
+
+68.1. Extracting gate netlist of module `\TopModule' to `/tmp/yosys-abc-a2Lbye/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+69. Executing SETUNDEF pass (replace undef values with defined constants).
+
+70. Executing HILOMAP pass (mapping to constant drivers).
+
+71. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+72. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \TopModule..
+Removed 6 unused cells and 317 unused wires.
+<suppressed ~318 debug messages>
+
+73. Executing INSBUF pass (insert buffer cells for connected wires).
+Add TopModule/$auto$insbuf.cc:97:execute$16434: \alu.result[0] -> \Result [0]
+Add TopModule/$auto$insbuf.cc:97:execute$16435: \alu.result[1] -> \Result [1]
+Add TopModule/$auto$insbuf.cc:97:execute$16436: \alu.result[2] -> \Result [2]
+Add TopModule/$auto$insbuf.cc:97:execute$16437: \alu.result[3] -> \Result [3]
+Add TopModule/$auto$insbuf.cc:97:execute$16438: \alu.result[4] -> \Result [4]
+Add TopModule/$auto$insbuf.cc:97:execute$16439: \alu.result[5] -> \Result [5]
+Add TopModule/$auto$insbuf.cc:97:execute$16440: \alu.result[6] -> \Result [6]
+Add TopModule/$auto$insbuf.cc:97:execute$16441: \alu.result[7] -> \Result [7]
+Add TopModule/$auto$insbuf.cc:97:execute$16442: \alu.result[8] -> \Result [8]
+Add TopModule/$auto$insbuf.cc:97:execute$16443: \alu.result[9] -> \Result [9]
+Add TopModule/$auto$insbuf.cc:97:execute$16444: \alu.result[10] -> \Result [10]
+Add TopModule/$auto$insbuf.cc:97:execute$16445: \alu.result[11] -> \Result [11]
+Add TopModule/$auto$insbuf.cc:97:execute$16446: \alu.result[12] -> \Result [12]
+Add TopModule/$auto$insbuf.cc:97:execute$16447: \alu.result[13] -> \Result [13]
+Add TopModule/$auto$insbuf.cc:97:execute$16448: \alu.result[14] -> \Result [14]
+Add TopModule/$auto$insbuf.cc:97:execute$16449: \alu.result[15] -> \Result [15]
+Add TopModule/$auto$insbuf.cc:97:execute$16450: \alu.result[16] -> \Result [16]
+Add TopModule/$auto$insbuf.cc:97:execute$16451: \alu.result[17] -> \Result [17]
+Add TopModule/$auto$insbuf.cc:97:execute$16452: \alu.result[18] -> \Result [18]
+Add TopModule/$auto$insbuf.cc:97:execute$16453: \alu.result[19] -> \Result [19]
+Add TopModule/$auto$insbuf.cc:97:execute$16454: \alu.result[20] -> \Result [20]
+Add TopModule/$auto$insbuf.cc:97:execute$16455: \alu.result[21] -> \Result [21]
+Add TopModule/$auto$insbuf.cc:97:execute$16456: \alu.result[22] -> \Result [22]
+Add TopModule/$auto$insbuf.cc:97:execute$16457: \alu.result[23] -> \Result [23]
+Add TopModule/$auto$insbuf.cc:97:execute$16458: \alu.result[24] -> \Result [24]
+Add TopModule/$auto$insbuf.cc:97:execute$16459: \alu.result[25] -> \Result [25]
+Add TopModule/$auto$insbuf.cc:97:execute$16460: \alu.result[26] -> \Result [26]
+Add TopModule/$auto$insbuf.cc:97:execute$16461: \alu.result[27] -> \Result [27]
+Add TopModule/$auto$insbuf.cc:97:execute$16462: \alu.result[28] -> \Result [28]
+Add TopModule/$auto$insbuf.cc:97:execute$16463: \alu.result[29] -> \Result [29]
+Add TopModule/$auto$insbuf.cc:97:execute$16464: \alu.result[30] -> \Result [30]
+Add TopModule/$auto$insbuf.cc:97:execute$16465: \alu.result[31] -> \Result [31]
+
+74. Executing CHECK pass (checking for obvious problems).
+Checking module TopModule...
+Found and reported 0 problems.
+
+75. Printing statistics.
+
+=== TopModule ===
+
+   Number of wires:               5457
+   Number of wire bits:           5488
+   Number of public wires:        5457
+   Number of public wire bits:    5488
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5485
+     sky130_fd_sc_hd__a2111o_2       1
+     sky130_fd_sc_hd__a211o_2       21
+     sky130_fd_sc_hd__a211oi_2       2
+     sky130_fd_sc_hd__a21bo_2        9
+     sky130_fd_sc_hd__a21boi_2      11
+     sky130_fd_sc_hd__a21o_2        99
+     sky130_fd_sc_hd__a21oi_2       35
+     sky130_fd_sc_hd__a221o_2        9
+     sky130_fd_sc_hd__a22o_2         8
+     sky130_fd_sc_hd__a2bb2o_2       4
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        15
+     sky130_fd_sc_hd__a31oi_2        5
+     sky130_fd_sc_hd__a32o_2         4
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2        27
+     sky130_fd_sc_hd__and2b_2       68
+     sky130_fd_sc_hd__and3_2        35
+     sky130_fd_sc_hd__and3b_2        8
+     sky130_fd_sc_hd__and4_2         2
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__buf_1       1516
+     sky130_fd_sc_hd__buf_2         54
+     sky130_fd_sc_hd__conb_1        12
+     sky130_fd_sc_hd__dfrtp_2        3
+     sky130_fd_sc_hd__dfxtp_2     1024
+     sky130_fd_sc_hd__inv_2         39
+     sky130_fd_sc_hd__mux2_2      1424
+     sky130_fd_sc_hd__mux4_2       541
+     sky130_fd_sc_hd__nand2_2       84
+     sky130_fd_sc_hd__nand3_2        6
+     sky130_fd_sc_hd__nand3b_2       2
+     sky130_fd_sc_hd__nand4_2        1
+     sky130_fd_sc_hd__nor2_2        56
+     sky130_fd_sc_hd__o211a_2        8
+     sky130_fd_sc_hd__o211ai_2       3
+     sky130_fd_sc_hd__o21a_2        21
+     sky130_fd_sc_hd__o21ai_2       35
+     sky130_fd_sc_hd__o21ba_2        3
+     sky130_fd_sc_hd__o221a_2       11
+     sky130_fd_sc_hd__o221ai_2       2
+     sky130_fd_sc_hd__o22a_2        72
+     sky130_fd_sc_hd__o22ai_2        1
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o311a_2        4
+     sky130_fd_sc_hd__o31a_2        15
+     sky130_fd_sc_hd__o31ai_2        1
+     sky130_fd_sc_hd__o32a_2         5
+     sky130_fd_sc_hd__o41a_2         3
+     sky130_fd_sc_hd__or2_2         65
+     sky130_fd_sc_hd__or2b_2         9
+     sky130_fd_sc_hd__or3_2         20
+     sky130_fd_sc_hd__or3b_2         7
+     sky130_fd_sc_hd__or4_2         11
+     sky130_fd_sc_hd__or4b_2         2
+     sky130_fd_sc_hd__xnor2_2       43
+     sky130_fd_sc_hd__xor2_2        14
+
+   Chip area for module '\TopModule': 64087.715200
+
+76. Executing Verilog backend.
+Dumping module `\TopModule'.
+
+77. Executing JSON backend.
+
+End of script. Logfile hash: 0a0912e3ed, CPU: user 2.52s system 0.05s, MEM: 95.15 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 61% 4x abc (3 sec), 8% 36x opt_clean (0 sec), ...

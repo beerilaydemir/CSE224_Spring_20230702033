@@ -1,0 +1,144 @@
+
+54. Printing statistics.
+
+=== ALU3 ===
+
+   Number of wires:               1005
+   Number of wire bits:           1100
+   Number of public wires:           4
+   Number of public wire bits:      99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1033
+     $_ANDNOT_                     258
+     $_AND_                         11
+     $_MUX_                        289
+     $_NAND_                        28
+     $_NOR_                         12
+     $_NOT_                         62
+     $_ORNOT_                       23
+     $_OR_                         256
+     $_XNOR_                         3
+     $_XOR_                         91
+
+=== InstructionDecoder ===
+
+   Number of wires:                 11
+   Number of wire bits:             87
+   Number of public wires:           8
+   Number of public wire bits:      84
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 39
+     $_ANDNOT_                      34
+     $_AND_                          1
+     $_NAND_                         1
+     $_NOR_                          1
+     $_OR_                           1
+     $_XNOR_                         1
+
+=== InstructionMemory ===
+
+   Number of wires:                  9
+   Number of wire bits:             44
+   Number of public wires:           2
+   Number of public wire bits:      37
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 21
+     $_ANDNOT_                       4
+     $_AND_                          1
+     $_MUX_                          7
+     $_NAND_                         2
+     $_NOR_                          1
+     $_NOT_                          2
+     $_ORNOT_                        1
+     $_OR_                           2
+     $_XOR_                          1
+
+=== ProgramCounter ===
+
+   Number of wires:                 20
+   Number of wire bits:             32
+   Number of public wires:           4
+   Number of public wire bits:       8
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 24
+     $_ANDNOT_                       1
+     $_AND_                          2
+     $_MUX_                          5
+     $_NAND_                         1
+     $_NOT_                          6
+     $_XOR_                          4
+     sky130_fd_sc_hd__dfrtp_2        5
+
+=== RegisterFile ===
+
+   Number of wires:               3065
+   Number of wire bits:           4162
+   Number of public wires:          40
+   Number of public wire bits:    1137
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4113
+     $_ANDNOT_                      32
+     $_MUX_                       3008
+     $_NAND_                         2
+     $_NOT_                          1
+     $_ORNOT_                        4
+     $_OR_                          42
+     sky130_fd_sc_hd__dfxtp_2     1024
+
+=== TopModule ===
+
+   Number of wires:                 16
+   Number of wire bits:            220
+   Number of public wires:          16
+   Number of public wire bits:     220
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 37
+     $_MUX_                         32
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+=== design hierarchy ===
+
+   TopModule                         1
+     ALU3                            1
+     InstructionDecoder              1
+     InstructionMemory               1
+     ProgramCounter                  1
+     RegisterFile                    1
+
+   Number of wires:               4126
+   Number of wire bits:           5645
+   Number of public wires:          74
+   Number of public wire bits:    1585
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5262
+     $_ANDNOT_                     329
+     $_AND_                         15
+     $_MUX_                       3341
+     $_NAND_                        34
+     $_NOR_                         14
+     $_NOT_                         71
+     $_ORNOT_                       28
+     $_OR_                         301
+     $_XNOR_                         4
+     $_XOR_                         96
+     sky130_fd_sc_hd__dfrtp_2        5
+     sky130_fd_sc_hd__dfxtp_2     1024
+
